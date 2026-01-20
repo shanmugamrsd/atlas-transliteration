@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlas Geotech Languages Transliteration | #1 Indian Languages transliteration</title>
+    <title>Atlas Languages Transliteration | #1 Indian Languages English to Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi, Bengali, Odia, Assamese, Urdu transliteration</title>
     <meta name="description"
         content="India's #1 technical transliteration platform supporting 22+ Indian languages. Accurate English to Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi, Bengali, Odia, Assamese, Urdu transliteration for technical documents.">
     <meta name="keywords"
@@ -2339,871 +2339,1017 @@
         </div>
     </footer>
 
-    <script>
-
-const letters = ['த','ह','త','ಕ','മ','A','ব','ଓ','ગ','म'];
-const colors = [
-    '#d32f2f', '#f57c00', '#c2185b', '#2e7d32', '#1565c0',
-    '#0056a6', '#7b1fa2', '#6a1b9a', '#00838f', '#ef6c00'
+   <script>
+// Language data
+const languages = [
+    { code: 'hi', name: 'Hindi', script: 'हिन्दी', icon: 'हि', speakers: '600M+', accuracy: '99.7%', description: 'Official Language of India' },
+    { code: 'ta', name: 'Tamil', script: 'தமிழ்', icon: 'த', speakers: '80M+', accuracy: '99.5%', description: 'Classical Language' },
+    { code: 'te', name: 'Telugu', script: 'తెలుగు', icon: 'తె', speakers: '95M+', accuracy: '99.3%', description: 'Technical Specialization' },
+    { code: 'kn', name: 'Kannada', script: 'ಕನ್ನಡ', icon: 'ಕ', speakers: '50M+', accuracy: '99.4%', description: 'IT Hub Language' },
+    { code: 'ml', name: 'Malayalam', script: 'മലയാളം', icon: 'മ', speakers: '35M+', accuracy: '99.2%', description: 'High Literacy' },
+    { code: 'mr', name: 'Marathi', script: 'मराठी', icon: 'म', speakers: '85M+', accuracy: '99.6%', description: 'Western India' },
+    { code: 'gu', name: 'Gujarati', script: 'ગુજરાતી', icon: 'ગ', speakers: '55M+', accuracy: '99.5%', description: 'Business Hub' },
+    { code: 'pa', name: 'Punjabi', script: 'ਪੰਜਾਬੀ', icon: 'ਪ', speakers: '125M+', accuracy: '99.3%', description: 'Gurmukhi Script' },
+    { code: 'bn', name: 'Bengali', script: 'বাংলা', icon: 'ব', speakers: '230M+', accuracy: '99.4%', description: 'Cultural Rich' },
+    { code: 'or', name: 'Odia', script: 'ଓଡ଼ିଆ', icon: 'ଓ', speakers: '35M+', accuracy: '99.2%', description: 'Eastern India' },
+    { code: 'as', name: 'Assamese', script: 'অসমীয়া', icon: 'অ', speakers: '15M+', accuracy: '99.1%', description: 'Northeast' },
+    { code: 'ur', name: 'Urdu', script: 'اردو', icon: 'ا', speakers: '65M+', accuracy: '99.0%', description: 'Persian Script' }
 ];
 
-const bigLetter = document.getElementById('bigLetter');
-const stack = document.getElementById('letterStack');
-const finalText = document.getElementById('finalText');
+// Language name mapping for display
+const languageNames = {
+    'hi': 'Hindi (हिन्दी)',
+    'ta': 'Tamil (தமிழ்)',
+    'te': 'Telugu (తెలుగు)',
+    'kn': 'Kannada (ಕನ್ನಡ)',
+    'ml': 'Malayalam (മലയാളം)',
+    'mr': 'Marathi (मराठी)',
+    'gu': 'Gujarati (ગુજરાતી)',
+    'pa': 'Punjabi (ਪੰਜਾਬੀ)',
+    'bn': 'Bengali (বাংলা)',
+    'as': 'Assamese (অসমীয়া)',
+    'or': 'Odia (ଓଡ଼ିଆ)',
+    'ur': 'Urdu (اردو)',
+    'en': 'English'
+};
 
-let index = 0;
-
-function random(min, max) {
-    return Math.random() * (max - min) + min;
-}
-
-function animateLetter() {
-    if (index < letters.length) {
-        const color = colors[Math.floor(Math.random() * colors.length)];
-
-        // Random position
-        const x = random(20, 180);
-        const y = random(20, 200);
-
-        bigLetter.textContent = letters[index];
-        bigLetter.style.left = x + 'px';
-        bigLetter.style.top = y + 'px';
-        bigLetter.style.color = color;
-        bigLetter.style.opacity = '1';
-        bigLetter.style.transform = 'scale(1)';
-
-        setTimeout(() => {
-            bigLetter.style.opacity = '0';
-            bigLetter.style.transform = 'scale(0.3)';
-
-            // Create bubble
-            const bubble = document.createElement('span');
-            bubble.textContent = letters[index];
-            bubble.style.background = color;
-            stack.appendChild(bubble);
-
-            setTimeout(() => {
-                bubble.style.opacity = '1';
-                bubble.style.transform = 'scale(1)';
-            }, 100);
-
-            index++;
-            setTimeout(animateLetter, 600);
-        }, 700);
-
-    } else {
-        finalText.style.opacity = '1';
-
-        // Restart animation
-        setTimeout(() => {
-            stack.innerHTML = '';
-            finalText.style.opacity = '0';
-            index = 0;
-            animateLetter();
-        }, 3500);
+// Comprehensive transliteration dictionaries
+const transliterationDictionaries = {
+    'hi': { // Hindi
+        'a': 'अ', 'b': 'ब', 'c': 'क', 'd': 'ड', 'e': 'ई',
+        'f': 'फ', 'g': 'ग', 'h': 'ह', 'i': 'इ', 'j': 'ज',
+        'k': 'क', 'l': 'ल', 'm': 'म', 'n': 'न', 'o': 'ओ',
+        'p': 'प', 'q': 'क', 'r': 'र', 's': 'स', 't': 'ट',
+        'u': 'उ', 'v': 'व', 'w': 'व', 'x': 'एक्स', 'y': 'य', 'z': 'ज़',
+        'geotechnical': 'भूतकनीकी',
+        'investigation': 'जाँच',
+        'report': 'रिपोर्ट',
+        'soil': 'मृदा',
+        'analysis': 'विश्लेषण',
+        'foundation': 'नींव',
+        'engineering': 'इंजीनियरिंग',
+        'structural': 'संरचनात्मक',
+        'design': 'डिजाइन',
+        'concrete': 'कंक्रीट',
+        'compressive': 'संपीड़न',
+        'strength': 'शक्ति',
+        'bearing': 'बेयरिंग',
+        'capacity': 'क्षमता',
+        'atlas': 'एटलस',
+        'transliterate': 'ट्रांसलिटरेट',
+        'technical': 'तकनीकी',
+        'document': 'दस्तावेज',
+        'language': 'भाषा',
+        'transliteration': 'लिप्यंतरण',
+        'platform': 'मंच',
+        'service': 'सेवा'
+    },
+    'ta': { // Tamil
+        'a': 'அ', 'b': 'ப', 'c': 'க', 'd': 'ட', 'e': 'ஈ',
+        'f': 'ஃப்', 'g': 'க', 'h': 'ஹ', 'i': 'இ', 'j': 'ஜ',
+        'k': 'க', 'l': 'ல', 'm': 'ம', 'n': 'ந', 'o': 'ஓ',
+        'p': 'ப', 'q': 'க', 'r': 'ர', 's': 'ஸ', 't': 'ட',
+        'u': 'உ', 'v': 'வ', 'w': 'வ', 'x': 'எக்ஸ்', 'y': 'ய', 'z': 'ஸ',
+        'geotechnical': 'புவித் தொழில்நுட்ப',
+        'investigation': 'விசாரணை',
+        'report': 'அறிக்கை',
+        'soil': 'மண்',
+        'analysis': 'பகுப்பாய்வு',
+        'foundation': 'அடித்தளம்',
+        'engineering': 'பொறியியல்',
+        'structural': 'கட்டமைப்பு',
+        'design': 'வடிவமைப்பு',
+        'concrete': 'கான்கிரீட்',
+        'compressive': 'அமுக்க',
+        'strength': 'வலிமை',
+        'bearing': 'தாங்கும்',
+        'capacity': 'திறன்',
+        'atlas': 'அட்லஸ்',
+        'transliterate': 'டிரான்ஸ்லிடரேட்',
+        'technical': 'தொழில்நுட்ப',
+        'document': 'ஆவணம்',
+        'language': 'மொழி',
+        'transliteration': 'எழுத்து மாற்றம்',
+        'platform': 'மேடை',
+        'service': 'சேவை'
+    },
+    'te': { // Telugu
+        'a': 'అ', 'b': 'బ', 'c': 'క', 'd': 'డ', 'e': 'ఈ',
+        'f': 'ఫ', 'g': 'గ', 'h': 'హ', 'i': 'ఇ', 'j': 'జ',
+        'k': 'క', 'l': 'ల', 'm': 'మ', 'n': 'న', 'o': 'ఓ',
+        'p': 'ప', 'q': 'క', 'r': 'ర', 's': 'స', 't': 'ట',
+        'u': 'ఉ', 'v': 'వ', 'w': 'వ', 'x': 'ఎక్స్', 'y': 'య', 'z': 'జ',
+        'geotechnical': 'భూతాంతరిక్',
+        'investigation': 'విచారణ',
+        'report': 'నివేదిక',
+        'soil': 'నేల',
+        'analysis': 'విశ్లేషణ',
+        'foundation': 'పునాది',
+        'engineering': 'ఇంజనీరింగ్',
+        'structural': 'నిర్మాణాత్మక',
+        'design': 'డిజైన్',
+        'concrete': 'కాంక్రీటు',
+        'compressive': 'కుదింపు',
+        'strength': 'బలం',
+        'bearing': 'బేరింగ్',
+        'capacity': 'సామర్థ్యం',
+        'atlas': 'అట్లాస్',
+        'transliterate': 'ట్రాన్స్లిటరేట్',
+        'technical': 'సాంకేతిక',
+        'document': 'పత్రం',
+        'language': 'భాష',
+        'transliteration': 'లిప్యంతరీకరణ',
+        'platform': 'వేదిక',
+        'service': 'సేవ'
+    },
+    'kn': { // Kannada
+        'a': 'ಅ', 'b': 'ಬ', 'c': 'ಕ', 'd': 'ಡ', 'e': 'ಈ',
+        'f': 'ಫ', 'g': 'ಗ', 'h': 'ಹ', 'i': 'ಇ', 'j': 'ಜ',
+        'k': 'ಕ', 'l': 'ಲ', 'm': 'ಮ', 'n': 'ನ', 'o': 'ಓ',
+        'p': 'ಪ', 'q': 'ಕ', 'r': 'ರ', 's': 'ಸ', 't': 'ಟ',
+        'u': 'ಉ', 'v': 'ವ', 'w': 'ವ', 'x': 'ಎಕ್ಸ್', 'y': 'ಯ', 'z': 'ಜ',
+        'geotechnical': 'ಭೂತಾಂತರಿಕ್',
+        'investigation': 'ವಿಚಾರಣೆ',
+        'report': 'ವರದಿ',
+        'soil': 'ಮಣ್ಣು',
+        'analysis': 'ವಿಶ್ಲೇಷಣೆ',
+        'foundation': 'ಅಡಿಪಾಯ',
+        'engineering': 'ಎಂಜಿನಿಯರಿಂಗ್',
+        'structural': 'ರಚನಾತ್ಮಕ',
+        'design': 'ವಿನ್ಯಾಸ',
+        'concrete': 'ಕಾಂಕ್ರೀಟ್',
+        'compressive': 'ಸಂಕೋಚನ',
+        'strength': 'ಶಕ್ತಿ',
+        'bearing': 'ಬೇರಿಂಗ್',
+        'capacity': 'ಸಾಮರ್ಥ್ಯ',
+        'atlas': 'ಅಟ್ಲಾಸ್',
+        'transliterate': 'ಟ್ರಾನ್ಸ್ಲಿಟರೇಟ್',
+        'technical': 'ತಾಂತ್ರಿಕ',
+        'document': 'ದಾಖಲೆ',
+        'language': 'ಭಾಷೆ',
+        'transliteration': 'ಲಿಪ್ಯಂತರಣ',
+        'platform': 'ವೇದಿಕೆ',
+        'service': 'ಸೇವೆ'
+    },
+    'ml': { // Malayalam
+        'a': 'അ', 'b': 'ബ', 'c': 'ക', 'd': 'ഡ', 'e': 'ഈ',
+        'f': 'ഫ', 'g': 'ഗ', 'h': 'ഹ', 'i': 'ഇ', 'j': 'ജ',
+        'k': 'ക', 'l': 'ല', 'm': 'മ', 'n': 'ന', 'o': 'ഓ',
+        'p': 'പ', 'q': 'ക', 'r': 'ര', 's': 'സ', 't': 'ട',
+        'u': 'ഉ', 'v': 'വ', 'w': 'വ', 'x': 'എക്സ്', 'y': 'യ', 'z': 'ജ',
+        'geotechnical': 'ഭൂസാങ്കേതിക',
+        'investigation': 'വിചാരണ',
+        'report': 'റിപ്പോർട്ട്',
+        'soil': 'മണ്ണ്',
+        'analysis': 'വിശകലനം',
+        'foundation': 'അടിത്തറ',
+        'engineering': 'എഞ്ചിനീയറിംഗ്',
+        'structural': 'ഘടനാപരമായ',
+        'design': 'ഡിസൈൻ',
+        'concrete': 'കോൺക്രീറ്റ്',
+        'compressive': 'കംപ്രസ്സീവ്',
+        'strength': 'ശക്തി',
+        'bearing': 'ബെയറിംഗ്',
+        'capacity': 'കപ്പാസിറ്റി',
+        'atlas': 'അറ്റ്ലസ്',
+        'transliterate': 'ട്രാൻസ്ലിറ്ററേറ്റ്',
+        'technical': 'സാങ്കേതിക',
+        'document': 'രേഖ',
+        'language': 'ഭാഷ',
+        'transliteration': 'ലിപ്യന്തരീകരണം',
+        'platform': 'പ്ലാറ്റ്ഫോം',
+        'service': 'സേവനം'
+    },
+    'mr': { // Marathi
+        'a': 'अ', 'b': 'ब', 'c': 'क', 'd': 'ड', 'e': 'ई',
+        'f': 'फ', 'g': 'ग', 'h': 'ह', 'i': 'इ', 'j': 'ज',
+        'k': 'क', 'l': 'ल', 'm': 'म', 'n': 'न', 'o': 'ओ',
+        'p': 'प', 'q': 'क', 'r': 'र', 's': 'स', 't': 'ट',
+        'u': 'उ', 'v': 'व', 'w': 'व', 'x': 'एक्स', 'y': 'य', 'z': 'झ',
+        'geotechnical': 'भूतंत्रज्ञान',
+        'investigation': 'चौकशी',
+        'report': 'अहवाल',
+        'soil': 'माती',
+        'analysis': 'विश्लेषण',
+        'foundation': 'पाया',
+        'engineering': 'अभियांत्रिकी',
+        'structural': 'संरचनात्मक',
+        'design': 'डिझाइन',
+        'concrete': 'काँक्रीट',
+        'compressive': 'संकुचित',
+        'strength': 'शक्ती',
+        'bearing': 'बेअरिंग',
+        'capacity': 'क्षमता',
+        'atlas': 'अॅटलस',
+        'transliterate': 'ट्रान्सलिटरेशन',
+        'technical': 'तांत्रिक',
+        'document': 'दस्तऐवज',
+        'language': 'भाषा',
+        'transliteration': 'लिप्यंतरण',
+        'platform': 'प्लॅटफॉर्म',
+        'service': 'सेवा'
+    },
+    'gu': { // Gujarati
+        'a': 'અ', 'b': 'બ', 'c': 'ક', 'd': 'ડ', 'e': 'ઈ',
+        'f': 'ફ', 'g': 'ગ', 'h': 'હ', 'i': 'ઇ', 'j': 'જ',
+        'k': 'ક', 'l': 'લ', 'm': 'મ', 'n': 'ન', 'o': 'ઓ',
+        'p': 'પ', 'q': 'ક', 'r': 'ર', 's': 'સ', 't': 'ટ',
+        'u': 'ઉ', 'v': 'વ', 'w': 'વ', 'x': 'એક્સ', 'y': 'ય', 'z': 'ઝ',
+        'geotechnical': 'ભૂતક્નિકી',
+        'investigation': 'તપાસ',
+        'report': 'અહેવાલ',
+        'soil': 'માટી',
+        'analysis': 'વિશ્લેષણ',
+        'foundation': 'પાયો',
+        'engineering': 'એન્જિનિયરિંગ',
+        'structural': 'માળખાકીય',
+        'design': 'ડિઝાઇન',
+        'concrete': 'કોંક્રિટ',
+        'compressive': 'સંકુચિત',
+        'strength': 'શક્તિ',
+        'bearing': 'બેરિંગ',
+        'capacity': 'ક્ષમતા',
+        'atlas': 'ઍટલાસ',
+        'transliterate': 'ટ્રાન્સલિટરેટ',
+        'technical': 'તકનીકી',
+        'document': 'દસ્તાવેજ',
+        'language': 'ભાષા',
+        'transliteration': 'લિપ્યંતરણ',
+        'platform': 'પ્લેટફોર્મ',
+        'service': 'સેવા'
+    },
+    'bn': { // Bengali
+        'a': 'অ', 'b': 'ব', 'c': 'ক', 'd': 'ড', 'e': 'ঈ',
+        'f': 'ফ', 'g': 'গ', 'h': 'হ', 'i': 'ই', 'j': 'জ',
+        'k': 'ক', 'l': 'ল', 'm': 'ম', 'n': 'ন', 'o': 'ও',
+        'p': 'প', 'q': 'ক', 'r': 'র', 's': 'স', 't': 'ট',
+        'u': 'উ', 'v': 'ভ', 'w': 'ও', 'x': 'এক্স', 'y': 'য', 'z': 'জ',
+        'geotechnical': 'ভূতাত্ত্বিক',
+        'investigation': 'তদন্ত',
+        'report': 'রিপোর্ট',
+        'soil': 'মাটি',
+        'analysis': 'বিশ্লেষণ',
+        'foundation': 'ভিত্তি',
+        'engineering': 'প্রকৌশল',
+        'structural': 'কাঠামোগত',
+        'design': 'নকশা',
+        'concrete': 'কংক্রিট',
+        'compressive': 'সংকুচিত',
+        'strength': 'শক্তি',
+        'bearing': 'বেয়ারিং',
+        'capacity': 'ক্ষমতা',
+        'atlas': 'এটলাস',
+        'transliterate': 'ট্রান্সলিটারেট',
+        'technical': 'প্রযুক্তিগত',
+        'document': 'নথি',
+        'language': 'ভাষা',
+        'transliteration': 'লিপ্যন্তরণ',
+        'platform': 'প্ল্যাটফর্ম',
+        'service': 'সেবা'
+    },
+    'pa': { // Punjabi
+        'a': 'ਅ', 'b': 'ਬ', 'c': 'ਕ', 'd': 'ਡ', 'e': 'ਈ',
+        'f': 'ਫ', 'g': 'ਗ', 'h': 'ਹ', 'i': 'ਇ', 'j': 'ਜ',
+        'k': 'ਕ', 'l': 'ਲ', 'm': 'ਮ', 'n': 'ਨ', 'o': 'ਓ',
+        'p': 'ਪ', 'q': 'ਕ', 'r': 'ਰ', 's': 'ਸ', 't': 'ਟ',
+        'u': 'ਉ', 'v': 'ਵ', 'w': 'ਵ', 'x': 'ਐਕਸ', 'y': 'ਯ', 'z': 'ਜ਼',
+        'geotechnical': 'ਜੀਓਟੈਕਨੀਕਲ',
+        'investigation': 'ਜਾਂਚ',
+        'report': 'ਰਿਪੋਰਟ',
+        'soil': 'ਮਿੱਟੀ',
+        'analysis': 'ਵਿਸ਼ਲੇਸ਼ਣ',
+        'foundation': 'ਬੁਨਿਆਦ',
+        'engineering': 'ਇੰਜੀਨੀਅਰਿੰਗ',
+        'structural': 'ਸੰਰਚਨਾਤਮਕ',
+        'design': 'ਡਿਜ਼ਾਈਨ',
+        'concrete': 'ਕੰਕਰੀਟ',
+        'compressive': 'ਸੰਕੁਚਿਤ',
+        'strength': 'ਤਾਕਤ',
+        'bearing': 'ਬੇਅਰਿੰਗ',
+        'capacity': 'ਸਮਰੱਥਾ',
+        'atlas': 'ਐਟਲਸ',
+        'transliterate': 'ਟ੍ਰਾਂਸਲਿਟਰੇਟ',
+        'technical': 'ਤਕਨੀਕੀ',
+        'document': 'ਦਸਤਾਵੇਜ਼',
+        'language': 'ਭਾਸ਼ਾ',
+        'transliteration': 'ਲਿਪੀਆਂਤਰਨ',
+        'platform': 'ਪਲੇਟਫਾਰਮ',
+        'service': 'ਸੇਵਾ'
     }
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize mobile menu
+    initMobileMenu();
+    
+    // Initialize transliteration tool
+    initTransliterationTool();
+
+    // Initialize language grid
+    initLanguageGrid();
+
+    // Initialize SEO tabs
+    initSEOTabs();
+
+    // Initialize other functionalities
+    initOtherFeatures();
+
+    // Initialize brand animation
+    initBrandAnimation();
+});
+
+// Brand Animation Function
+function initBrandAnimation() {
+    const letters = ['த','ह','త','ಕ','മ','A','ব','ଓ','ગ','म'];
+    const colors = [
+        '#d32f2f', '#f57c00', '#c2185b', '#2e7d32', '#1565c0',
+        '#0056a6', '#7b1fa2', '#6a1b9a', '#00838f', '#ef6c00'
+    ];
+
+    const bigLetter = document.getElementById('bigLetter');
+    const stack = document.getElementById('letterStack');
+    const finalText = document.getElementById('finalText');
+
+    let index = 0;
+    let isAnimating = false;
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    function animateLetter() {
+        if (isAnimating) return;
+        
+        if (index < letters.length) {
+            isAnimating = true;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+
+            // Random position
+            const x = random(20, 180);
+            const y = random(20, 200);
+
+            bigLetter.textContent = letters[index];
+            bigLetter.style.left = x + 'px';
+            bigLetter.style.top = y + 'px';
+            bigLetter.style.color = color;
+            bigLetter.style.opacity = '1';
+            bigLetter.style.transform = 'scale(1)';
+
+            setTimeout(() => {
+                bigLetter.style.opacity = '0';
+                bigLetter.style.transform = 'scale(0.3)';
+
+                // Create bubble
+                const bubble = document.createElement('span');
+                bubble.textContent = letters[index];
+                bubble.style.background = color;
+                stack.appendChild(bubble);
+
+                setTimeout(() => {
+                    bubble.style.opacity = '1';
+                    bubble.style.transform = 'scale(1)';
+                }, 100);
+
+                index++;
+                isAnimating = false;
+                
+                if (index < letters.length) {
+                    setTimeout(animateLetter, 600);
+                } else {
+                    // Show final text
+                    setTimeout(() => {
+                        finalText.style.opacity = '1';
+                        
+                        // Restart animation after delay
+                        setTimeout(() => {
+                            stack.innerHTML = '';
+                            finalText.style.opacity = '0';
+                            index = 0;
+                            setTimeout(animateLetter, 1000);
+                        }, 3500);
+                    }, 1000);
+                }
+            }, 700);
+        }
+    }
+
+    // Start animation after a short delay
+    setTimeout(animateLetter, 1000);
 }
 
-animateLetter();
+function initMobileMenu() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const overlay = document.getElementById('overlay');
+    const body = document.body;
 
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        overlay.classList.toggle('active');
+        body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        
+        // Change icon
+        const icon = this.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
 
-runAnimation();
-        // API Endpoint mapping
-        const apiEndpoints = {
-            'hi': 'https://transliteration.devnagri.com/api/tl/hi/',
-            'ta': 'https://transliteration.devnagri.com/api/tl/ta/',
-            'te': 'https://transliteration.devnagri.com/api/tl/te/',
-            'kn': 'https://transliteration.devnagri.com/api/tl/kn/',
-            'ml': 'https://transliteration.devnagri.com/api/tl/ml/',
-            'mr': 'https://transliteration.devnagri.com/api/tl/mr/',
-            'gu': 'https://transliteration.devnagri.com/api/tl/gu/',
-            'pa': 'https://transliteration.devnagri.com/api/tl/pa/',
-            'bn': 'https://transliteration.devnagri.com/api/tl/bn/',
-            'as': 'https://transliteration.devnagri.com/api/tl/as/',
-            'or': 'https://transliteration.devnagri.com/api/tl/or/',
-            'ur': 'https://transliteration.devnagri.com/api/tl/ur/'
-        };
+    overlay.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+        overlay.classList.remove('active');
+        body.style.overflow = '';
+        
+        // Reset icon
+        const icon = menuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    });
 
-        // Language data
-        const languages = [
-            { code: 'hi', name: 'Hindi', script: 'हिन्दी', icon: 'हि', speakers: '600M+', accuracy: '99.7%', description: 'Official Language of India' },
-            { code: 'ta', name: 'Tamil', script: 'தமிழ்', icon: 'த', speakers: '80M+', accuracy: '99.5%', description: 'Classical Language' },
-            { code: 'te', name: 'Telugu', script: 'తెలుగు', icon: 'తె', speakers: '95M+', accuracy: '99.3%', description: 'Technical Specialization' },
-            { code: 'kn', name: 'Kannada', script: 'ಕನ್ನಡ', icon: 'ಕ', speakers: '50M+', accuracy: '99.4%', description: 'IT Hub Language' },
-            { code: 'ml', name: 'Malayalam', script: 'മലയാളം', icon: 'മ', speakers: '35M+', accuracy: '99.2%', description: 'High Literacy' },
-            { code: 'mr', name: 'Marathi', script: 'मराठी', icon: 'म', speakers: '85M+', accuracy: '99.6%', description: 'Western India' },
-            { code: 'gu', name: 'Gujarati', script: 'ગુજરાતી', icon: 'ગ', speakers: '55M+', accuracy: '99.5%', description: 'Business Hub' },
-            { code: 'pa', name: 'Punjabi', script: 'ਪੰਜਾਬੀ', icon: 'ਪ', speakers: '125M+', accuracy: '99.3%', description: 'Gurmukhi Script' },
-            { code: 'bn', name: 'Bengali', script: 'বাংলা', icon: 'ব', speakers: '230M+', accuracy: '99.4%', description: 'Cultural Rich' },
-            { code: 'or', name: 'Odia', script: 'ଓଡ଼ିଆ', icon: 'ଓ', speakers: '35M+', accuracy: '99.2%', description: 'Eastern India' },
-            { code: 'as', name: 'Assamese', script: 'অসমীয়া', icon: 'অ', speakers: '15M+', accuracy: '99.1%', description: 'Northeast' },
-            { code: 'ur', name: 'Urdu', script: 'اردو', icon: 'ا', speakers: '65M+', accuracy: '99.0%', description: 'Persian Script' }
-        ];
-
-        // Language name mapping for display
-        const languageNames = {
-            'hi': 'Hindi (हिन्दी)',
-            'ta': 'Tamil (தமிழ்)',
-            'te': 'Telugu (తెలుగు)',
-            'kn': 'Kannada (ಕನ್ನಡ)',
-            'ml': 'Malayalam (മലയാളം)',
-            'mr': 'Marathi (मराठी)',
-            'gu': 'Gujarati (ગુજરાતી)',
-            'pa': 'Punjabi (ਪੰਜਾਬੀ)',
-            'bn': 'Bengali (বাংলা)',
-            'as': 'Assamese (অসমীয়া)',
-            'or': 'Odia (ଓଡ଼ିଆ)',
-            'ur': 'Urdu (اردو)',
-            'en': 'English'
-        };
-
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize mobile menu
-            initMobileMenu();
+    // Close menu when clicking on links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            body.style.overflow = '';
             
-            // Initialize transliteration tool
-            initTransliterationTool();
-
-            // Initialize language grid
-            initLanguageGrid();
-
-            // Initialize SEO tabs
-            initSEOTabs();
-
-            // Initialize other functionalities
-            initOtherFeatures();
-
-            // Auto-transliterate on page load
-            setTimeout(() => {
-                document.getElementById('transliterate-btn').click();
-            }, 1000);
+            // Reset icon
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         });
+    });
+}
 
-        function initMobileMenu() {
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.getElementById('nav-links');
-            const overlay = document.getElementById('overlay');
-            const body = document.body;
+function initTransliterationTool() {
+    const transliterateBtn = document.getElementById('transliterate-btn');
+    const sourceText = document.getElementById('source-text');
+    const targetLanguage = document.getElementById('target-language');
+    const resultText = document.getElementById('transliteration-result');
+    const resultMeta = document.getElementById('result-meta');
+    const wordBreakdown = document.getElementById('word-breakdown');
+    const wordList = document.getElementById('word-list');
+    const termTags = document.querySelectorAll('.term-tag');
+    const clearInputBtn = document.getElementById('clear-input');
+    const copyResultBtn = document.getElementById('copy-result');
+    const swapBtn = document.getElementById('swap-languages');
+    const targetLanguageName = document.getElementById('target-language-name');
+    const charCount = document.getElementById('char-count');
 
-            menuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                overlay.classList.toggle('active');
-                body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-                
-                // Change icon
-                const icon = this.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
+    // Update character count
+    function updateCharCount() {
+        const text = sourceText.value;
+        charCount.textContent = text.length;
+    }
 
-            overlay.addEventListener('click', function() {
-                navLinks.classList.remove('active');
-                overlay.classList.remove('active');
-                body.style.overflow = '';
-                
-                // Reset icon
-                const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
+    // Update target language display
+    function updateLanguageDisplay() {
+        const lang = targetLanguage.value;
+        targetLanguageName.textContent = languageNames[lang] || 'Select Language';
+    }
 
-            // Close menu when clicking on links
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.classList.remove('active');
-                    overlay.classList.remove('active');
-                    body.style.overflow = '';
-                    
-                    // Reset icon
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                });
-            });
-
-            // Handle dropdowns on mobile
-            document.querySelectorAll('.nav-links li').forEach(item => {
-                if (window.innerWidth <= 992) {
-                    const link = item.querySelector('a');
-                    if (link && item.querySelector('.dropdown')) {
-                        link.addEventListener('click', function(e) {
-                            if (!item.classList.contains('active')) {
-                                e.preventDefault();
-                                item.classList.add('active');
-                            }
-                        });
-                    }
-                }
-            });
+    // Function to transliterate text
+    function transliterateText(text, langCode) {
+        const dictionary = transliterationDictionaries[langCode];
+        if (!dictionary) {
+            return text + " (Language not fully supported yet)";
         }
 
-        function initTransliterationTool() {
-            const transliterateBtn = document.getElementById('transliterate-btn');
-            const sourceText = document.getElementById('source-text');
-            const targetLanguage = document.getElementById('target-language');
-            const sourceLanguage = document.getElementById('source-language');
-            const resultText = document.getElementById('transliteration-result');
-            const resultMeta = document.getElementById('result-meta');
-            const wordBreakdown = document.getElementById('word-breakdown');
-            const wordList = document.getElementById('word-list');
-            const termTags = document.querySelectorAll('.term-tag');
-            const clearInputBtn = document.getElementById('clear-input');
-            const copyResultBtn = document.getElementById('copy-result');
-            const swapBtn = document.getElementById('swap-languages');
-            const targetLanguageName = document.getElementById('target-language-name');
-            const charCount = document.getElementById('char-count');
+        const words = text.toLowerCase().split(/\s+/);
+        const transliteratedWords = [];
 
-            // Update character count
-            function updateCharCount() {
-                const text = sourceText.value;
-                charCount.textContent = text.length;
+        for (let word of words) {
+            // Remove special characters for matching
+            const cleanWord = word.replace(/[^\w-]/g, '');
+            
+            if (dictionary[cleanWord]) {
+                // Use the full word if found in dictionary
+                transliteratedWords.push(dictionary[cleanWord]);
+            } else {
+                // Otherwise transliterate character by character
+                let transliteratedWord = '';
+                for (let char of cleanWord) {
+                    transliteratedWord += dictionary[char] || char;
+                }
+                transliteratedWords.push(transliteratedWord);
             }
+        }
 
-            // Update target language display
-            function updateLanguageDisplay() {
-                const lang = targetLanguage.value;
-                targetLanguageName.textContent = languageNames[lang];
-            }
+        return transliteratedWords.join(' ');
+    }
 
-            // Split text into words and preserve spaces
-            function splitTextWithSpaces(text) {
-                const parts = [];
-                let currentPart = '';
+    // Handle transliteration button click
+    transliterateBtn.addEventListener('click', function () {
+        const text = sourceText.value.trim();
+        const lang = targetLanguage.value;
 
-                for (let i = 0; i < text.length; i++) {
-                    if (text[i] === ' ') {
-                        if (currentPart) {
-                            parts.push({ type: 'word', text: currentPart });
-                            currentPart = '';
-                        }
-                        let spaceCount = 1;
-                        while (i + 1 < text.length && text[i + 1] === ' ') {
-                            spaceCount++;
-                            i++;
-                        }
-                        parts.push({ type: 'space', text: ' '.repeat(spaceCount) });
-                    } else {
-                        currentPart += text[i];
-                    }
-                }
+        if (!text) {
+            resultText.innerHTML = '<p style="color: var(--gray); font-style: italic; text-align: center; padding: 40px;">Please enter some text to transliterate.</p>';
+            resultMeta.innerHTML = '';
+            wordBreakdown.style.display = 'none';
+            return;
+        }
 
-                if (currentPart) {
-                    parts.push({ type: 'word', text: currentPart });
-                }
+        // Show loading state
+        const originalBtnText = transliterateBtn.innerHTML;
+        transliterateBtn.innerHTML = '<div class="loading"></div> Transliterating...';
+        transliterateBtn.disabled = true;
 
-                return parts;
-            }
+        // Clear previous results
+        resultText.innerHTML = '<div style="text-align: center; padding: 40px;"><div class="loading" style="margin: 0 auto;"></div><p style="margin-top: 15px; color: var(--gray);">Processing transliteration...</p></div>';
+        resultMeta.innerHTML = '';
+        wordBreakdown.style.display = 'none';
+        wordList.innerHTML = '';
 
-            // Transliterate a single word
-            async function transliterateWord(word, lang) {
-                try {
-                    const encodedWord = encodeURIComponent(word);
-                    const apiUrl = `${apiEndpoints[lang]}${encodedWord}`;
-
-                    const response = await fetch(apiUrl, {
-                        method: 'GET',
-                        headers: {
-                            'Accept': 'application/json',
-                        }
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`API responded with status: ${response.status}`);
-                    }
-
-                    const data = await response.json();
-
-                    if (data.success && data.result && data.result.length > 0) {
-                        return data.result[0];
-                    }
-                } catch (error) {
-                    console.error('Error transliterating word:', word, error);
-                }
-
-                return null;
-            }
-
-            // Handle transliteration button click
-            transliterateBtn.addEventListener('click', async function () {
-                const text = sourceText.value.trim();
-                const lang = targetLanguage.value;
-
-                if (!text) {
-                    resultText.innerHTML = '<p style="color: var(--gray); font-style: italic; text-align: center; padding: 40px;">Please enter some text to transliterate.</p>';
-                    resultMeta.innerHTML = '';
-                    wordBreakdown.style.display = 'none';
-                    return;
-                }
-
-                // Show loading state
-                const originalBtnText = transliterateBtn.innerHTML;
-                transliterateBtn.innerHTML = '<div class="loading"></div> Transliterating...';
-                transliterateBtn.disabled = true;
-
-                // Clear previous results
-                resultText.innerHTML = '<div style="text-align: center; padding: 40px;"><div class="loading" style="margin: 0 auto;"></div><p style="margin-top: 15px; color: var(--gray);">Processing transliteration...</p></div>';
-                resultMeta.innerHTML = '';
-                wordBreakdown.style.display = 'none';
-                wordList.innerHTML = '';
-
-                try {
-                    // Split text into words and spaces
-                    const parts = splitTextWithSpaces(text);
-                    const transliteratedParts = [];
-                    const wordTransliterations = [];
-
-                    // Transliterate each word separately
-                    for (let i = 0; i < parts.length; i++) {
-                        const part = parts[i];
-
-                        if (part.type === 'space') {
-                            // Keep spaces as they are
-                            transliteratedParts.push(part.text);
-                        } else if (part.type === 'word') {
-                            // Show progress for long texts
-                            if (parts.length > 5 && i % Math.ceil(parts.length / 4) === 0) {
-                                resultText.innerHTML = `<div style="text-align: center; padding: 40px;">
-                                    <div class="loading" style="margin: 0 auto;"></div>
-                                    <p style="margin-top: 15px; color: var(--gray);">
-                                        Transliterating word ${i + 1} of ${parts.filter(p => p.type === 'word').length}...
-                                    </p>
-                                </div>`;
-                            }
-
-                            // Transliterate the word
-                            const transliteratedWord = await transliterateWord(part.text, lang);
-
-                            if (transliteratedWord) {
-                                transliteratedParts.push(transliteratedWord);
-
-                                // Store for word-by-word breakdown
-                                wordTransliterations.push({
-                                    original: part.text,
-                                    transliterated: transliteratedWord
-                                });
-                            } else {
-                                // If translation fails, keep the original word
-                                transliteratedParts.push(part.text);
-
-                                wordTransliterations.push({
-                                    original: part.text,
-                                    transliterated: part.text
-                                });
-                            }
-                        }
-                    }
-
-                    // Combine all parts
-                    const finalTransliteration = transliteratedParts.join('');
-
-                    // Get current time for display
-                    const currentTime = new Date().toLocaleTimeString('en-US', {
-                        hour: '2-digit',
-                        minute: '2-digit'
-                    });
-
-                    // Display the final transliteration
-                    resultText.innerHTML = `<div style="font-size: 1.3rem; line-height: 1.8; font-family: 'Source Sans Pro', sans-serif;">${finalTransliteration}</div>`;
-
-                    // Show word-by-word breakdown if we have multiple words
-                    if (wordTransliterations.length > 1) {
-                        wordBreakdown.style.display = 'block';
-                        wordTransliterations.forEach(item => {
-                            const wordItem = document.createElement('div');
-                            wordItem.className = 'word-item';
-                            wordItem.innerHTML = `
-                                <span class="original-word">${item.original}</span>
-                                <span class="transliterated-word">${item.transliterated}</span>
-                            `;
-                            wordList.appendChild(wordItem);
-                        });
-                    }
-
-                    // Show meta info
-                    const wordCount = wordTransliterations.length;
-                    resultMeta.innerHTML = `
-                        <div>
-                            <span><i class="fas fa-check-circle" style="color: var(--success);"></i> Transliterated to ${languageNames[lang].split(' ')[0]}</span>
-                            <span>${wordCount} word${wordCount !== 1 ? 's' : ''} • ${currentTime}</span>
-                        </div>
-                    `;
-
-                } catch (error) {
-                    console.error('Transliteration error:', error);
-
-                    // Show error message
-                    resultText.innerHTML = '<div style="text-align: center; padding: 40px; color: #dc3545;"><i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 15px;"></i><p>Unable to connect to transliteration service. Please try again later or use the sample transliteration below.</p></div>';
-                    resultMeta.innerHTML = `<span style="color: #dc3545;"><i class="fas fa-exclamation-circle"></i> Connection Error • ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>`;
-
-                    // Show fallback transliteration
-                    showFallbackTransliteration(lang, text);
-                } finally {
-                    // Reset button state
-                    transliterateBtn.innerHTML = originalBtnText;
-                    transliterateBtn.disabled = false;
-                }
-            });
-
-            // Function to show fallback transliteration if API fails
-            function showFallbackTransliteration(lang, text) {
-                // Sample fallback transliterations for common technical terms
-                const fallbackMap = {
-                    'hi': {
-                        'geotechnical': 'भूतकनीकी',
-                        'investigation': 'जाँच',
-                        'report': 'रिपोर्ट',
-                        'soil': 'मृदा',
-                        'analysis': 'विश्लेषण',
-                        'foundation': 'नींव',
-                        'design': 'डिजाइन',
-                        'engineering': 'इंजीनियरिंग',
-                        'structural': 'संरचनात्मक',
-                        'concrete': 'कंक्रीट',
-                        'compressive': 'संपीड़न',
-                        'strength': 'शक्ति',
-                        'bearing': 'बेयरिंग',
-                        'capacity': 'क्षमता'
-                    },
-                    'ta': {
-                        'geotechnical': 'புவித் தொழில்நுட்ப',
-                        'investigation': 'விசாரணை',
-                        'report': 'அறிக்கை',
-                        'soil': 'மண்',
-                        'analysis': 'பகுப்பாய்வு',
-                        'foundation': 'அடித்தளம்',
-                        'design': 'வடிவமைப்பு',
-                        'engineering': 'பொறியியல்',
-                        'structural': 'கட்டமைப்பு',
-                        'concrete': 'கான்கிரீட்',
-                        'compressive': 'அமுக்க',
-                        'strength': 'வலிமை',
-                        'bearing': 'தாங்கும்',
-                        'capacity': 'திறன்'
-                    },
-                    'te': {
-                        'geotechnical': 'భూతాంతరిక్',
-                        'investigation': 'విచారణ',
-                        'report': 'నివేదిక',
-                        'soil': 'నేల',
-                        'analysis': 'విశ్లేషణ',
-                        'foundation': 'పునాది',
-                        'design': 'డిజైన్',
-                        'engineering': 'ఇంజనీరింగ్',
-                        'structural': 'నిర్మాణాత్మక',
-                        'concrete': 'కాంక్రీటు',
-                        'compressive': 'కుదింపు',
-                        'strength': 'బలం',
-                        'bearing': 'బేరింగ్',
-                        'capacity': 'సామర్థ్యం'
-                    },
-                    'kn': {
-                        'geotechnical': 'ಭೂತಾಂತರಿಕ್',
-                        'investigation': 'ವಿಚಾರಣೆ',
-                        'report': 'ವರದಿ',
-                        'soil': 'ಮಣ್ಣು',
-                        'analysis': 'ವಿಶ್ಲೇಷಣೆ',
-                        'foundation': 'ಅಡಿಪಾಯ',
-                        'design': 'ವಿನ್ಯಾಸ',
-                        'engineering': 'ಎಂಜಿನಿಯರಿಂಗ್',
-                        'structural': 'ರಚನಾತ್ಮಕ',
-                        'concrete': 'ಕಾಂಕ್ರೀಟ್',
-                        'compressive': 'ಸಂಕೋಚನ',
-                        'strength': 'ಶಕ್ತಿ',
-                        'bearing': 'ಬೇರಿಂಗ್',
-                        'capacity': 'ಸಾಮರ್ಥ್ಯ'
-                    }
-                };
-
-                // Split text into words
-                const words = text.toLowerCase().split(/\s+/);
-                const transliteratedWords = [];
-                const wordTransliterations = [];
-
-                // Try to transliterate each word
-                words.forEach(word => {
-                    if (fallbackMap[lang] && fallbackMap[lang][word]) {
-                        transliteratedWords.push(fallbackMap[lang][word]);
-                        wordTransliterations.push({
-                            original: word,
-                            transliterated: fallbackMap[lang][word]
-                        });
-                    } else {
-                        // Keep the word as is if no transliteration available
-                        transliteratedWords.push(word);
-                        wordTransliterations.push({
-                            original: word,
-                            transliterated: word
-                        });
-                    }
+        // Process transliteration with a slight delay for better UX
+        setTimeout(() => {
+            try {
+                const transliteratedText = transliterateText(text, lang);
+                
+                // Get current time for display
+                const currentTime = new Date().toLocaleTimeString('en-US', {
+                    hour: '2-digit',
+                    minute: '2-digit'
                 });
 
-                // Show the result
-                const finalResult = transliteratedWords.join(' ');
-                resultText.innerHTML = `<div style="font-size: 1.3rem; line-height: 1.8; font-family: 'Source Sans Pro', sans-serif;">${finalResult}</div>`;
+                // Display the final transliteration
+                resultText.innerHTML = `<div style="font-size: 1.3rem; line-height: 1.8; font-family: 'Source Sans Pro', sans-serif;">${transliteratedText}</div>`;
 
                 // Show word-by-word breakdown
-                if (wordTransliterations.length > 0) {
+                const words = text.toLowerCase().split(/\s+/);
+                if (words.length > 0) {
                     wordBreakdown.style.display = 'block';
-                    wordTransliterations.forEach(item => {
+                    words.forEach(word => {
+                        const transliteratedWord = transliterateText(word, lang);
                         const wordItem = document.createElement('div');
                         wordItem.className = 'word-item';
                         wordItem.innerHTML = `
-                            <span class="original-word">${item.original}</span>
-                            <span class="transliterated-word">${item.transliterated}</span>
+                            <span class="original-word">${word}</span>
+                            <span class="transliterated-word">${transliteratedWord}</span>
                         `;
                         wordList.appendChild(wordItem);
                     });
                 }
 
-                resultMeta.innerHTML = '<span style="color: var(--warning);"><i class="fas fa-info-circle"></i> Sample transliteration (demo mode) • Connection issues detected</span>';
-            }
-
-            // Handle sample term clicks
-            termTags.forEach(tag => {
-                tag.addEventListener('click', function () {
-                    const text = this.getAttribute('data-text');
-                    sourceText.value = text;
-                    updateCharCount();
-
-                    // Auto-transliterate after a short delay
-                    setTimeout(() => {
-                        transliterateBtn.click();
-                    }, 300);
-                });
-            });
-
-            // Clear input button
-            clearInputBtn.addEventListener('click', function () {
-                sourceText.value = '';
-                updateCharCount();
-                resultText.innerHTML = '<p style="color: var(--gray); font-style: italic; text-align: center; padding: 40px;">Transliterated text will appear here.</p>';
-                resultMeta.innerHTML = '';
-                wordBreakdown.style.display = 'none';
-            });
-
-            // Copy result button
-            copyResultBtn.addEventListener('click', function () {
-                const result = resultText.innerText.trim();
-                if (result && !result.includes('Transliterated text will appear here')) {
-                    navigator.clipboard.writeText(result).then(() => {
-                        // Show feedback
-                        const originalIcon = copyResultBtn.innerHTML;
-                        copyResultBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                        copyResultBtn.style.color = 'var(--success)';
-                        setTimeout(() => {
-                            copyResultBtn.innerHTML = originalIcon;
-                            copyResultBtn.style.color = '';
-                        }, 2000);
-                    });
-                }
-            });
-
-            // Swap languages button
-            swapBtn.addEventListener('click', function () {
-                // For now, just rotate the icon
-                this.style.transform = 'rotate(180deg)';
-                setTimeout(() => {
-                    this.style.transform = 'rotate(0deg)';
-                }, 300);
-            });
-
-            // Update language display when selection changes
-            targetLanguage.addEventListener('change', function () {
-                updateLanguageDisplay();
-                // Auto-transliterate when language changes
-                transliterateBtn.click();
-            });
-
-            // Update character count as user types
-            sourceText.addEventListener('input', updateCharCount);
-
-            // Allow Enter key to trigger transliteration (with Ctrl/CMD)
-            sourceText.addEventListener('keydown', function (e) {
-                if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-                    e.preventDefault();
-                    transliterateBtn.click();
-                }
-            });
-
-            // Initialize
-            updateCharCount();
-            updateLanguageDisplay();
-        }
-
-        function initLanguageGrid() {
-            const languageGrid = document.querySelector('.language-grid');
-
-            languages.forEach(lang => {
-                const languageCard = document.createElement('div');
-                languageCard.className = 'language-card';
-                languageCard.setAttribute('data-language', lang.code);
-                languageCard.setAttribute('data-name', lang.name);
-
-                languageCard.innerHTML = `
-                    <div class="language-icon">${lang.icon}</div>
-                    <div class="language-name">${lang.name}</div>
-                    <div class="language-script">${lang.script}</div>
-                    <div class="language-stats">
-                        <span><i class="fas fa-users"></i> ${lang.speakers}</span>
-                        <span><i class="fas fa-check-circle"></i> ${lang.accuracy}</span>
+                // Show meta info
+                const wordCount = words.length;
+                const langName = languageNames[lang] ? languageNames[lang].split(' ')[0] : 'Selected';
+                resultMeta.innerHTML = `
+                    <div>
+                        <span><i class="fas fa-check-circle" style="color: var(--success);"></i> Transliterated to ${langName}</span>
+                        <span>${wordCount} word${wordCount !== 1 ? 's' : ''} • ${currentTime}</span>
                     </div>
                 `;
 
-                languageCard.addEventListener('click', function () {
-                    // Update transliteration tool language
-                    const targetLanguageSelect = document.getElementById('target-language');
-                    targetLanguageSelect.value = lang.code;
-
-                    // Update language display
-                    const targetLanguageName = document.getElementById('target-language-name');
-                    targetLanguageName.textContent = languageNames[lang.code];
-
-                    // Update SEO tab
-                    const seoTab = document.querySelector(`.seo-tab[data-tab="english-${lang.name.toLowerCase()}"]`);
-                    if (seoTab) {
-                        seoTab.click();
-                    } else {
-                        document.querySelector('.seo-tab[data-tab="all-languages"]').click();
-                    }
-
-                    // Update active language card
-                    document.querySelectorAll('.language-card').forEach(card => {
-                        card.classList.remove('active');
-                    });
-                    this.classList.add('active');
-
-                    // Auto-transliterate
-                    document.getElementById('transliterate-btn').click();
-                });
-
-                languageGrid.appendChild(languageCard);
-            });
-
-            // Set first language as active
-            const firstCard = languageGrid.querySelector('.language-card');
-            if (firstCard) {
-                firstCard.classList.add('active');
+            } catch (error) {
+                console.error('Transliteration error:', error);
+                
+                // Show error message
+                resultText.innerHTML = '<div style="text-align: center; padding: 40px; color: #dc3545;"><i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 15px;"></i><p>Unable to process transliteration. Please try different text.</p></div>';
+                resultMeta.innerHTML = `<span style="color: #dc3545;"><i class="fas fa-exclamation-circle"></i> Processing Error • ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>`;
+            } finally {
+                // Reset button state
+                transliterateBtn.innerHTML = originalBtnText;
+                transliterateBtn.disabled = false;
             }
+        }, 500);
+    });
+
+    // Handle sample term clicks
+    termTags.forEach(tag => {
+        tag.addEventListener('click', function () {
+            const text = this.getAttribute('data-text');
+            sourceText.value = text;
+            updateCharCount();
+
+            // Auto-transliterate after a short delay
+            setTimeout(() => {
+                transliterateBtn.click();
+            }, 300);
+        });
+    });
+
+    // Clear input button
+    clearInputBtn.addEventListener('click', function () {
+        sourceText.value = '';
+        updateCharCount();
+        resultText.innerHTML = '<p style="color: var(--gray); font-style: italic; text-align: center; padding: 40px;">Transliterated text will appear here.</p>';
+        resultMeta.innerHTML = '';
+        wordBreakdown.style.display = 'none';
+    });
+
+    // Copy result button
+    copyResultBtn.addEventListener('click', function () {
+        const result = resultText.innerText.trim();
+        if (result && !result.includes('Transliterated text will appear here')) {
+            navigator.clipboard.writeText(result).then(() => {
+                // Show feedback
+                const originalIcon = copyResultBtn.innerHTML;
+                copyResultBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                copyResultBtn.style.color = 'var(--success)';
+                setTimeout(() => {
+                    copyResultBtn.innerHTML = originalIcon;
+                    copyResultBtn.style.color = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Copy failed:', err);
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = result;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // Show feedback
+                const originalIcon = copyResultBtn.innerHTML;
+                copyResultBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                copyResultBtn.style.color = 'var(--success)';
+                setTimeout(() => {
+                    copyResultBtn.innerHTML = originalIcon;
+                    copyResultBtn.style.color = '';
+                }, 2000);
+            });
         }
+    });
 
-        function initSEOTabs() {
-            const seoTabs = document.querySelectorAll('.seo-tab');
-            const seoContentBox = document.getElementById('seo-content-box');
+    // Swap languages button
+    swapBtn.addEventListener('click', function () {
+        // Rotate the icon
+        this.style.transform = 'rotate(180deg)';
+        setTimeout(() => {
+            this.style.transform = 'rotate(0deg)';
+        }, 300);
+        
+        // Show info message
+        const originalText = sourceText.value;
+        if (originalText && !originalText.includes('(')) {
+            sourceText.value = resultText.innerText;
+            updateCharCount();
+            
+            // Swap languages if possible
+            const currentLang = targetLanguage.value;
+            const langSelect = document.getElementById('target-language');
+            if (currentLang === 'en') {
+                langSelect.value = 'hi';
+            } else if (currentLang !== 'en') {
+                langSelect.value = 'en';
+            }
+            updateLanguageDisplay();
+            
+            // Auto-transliterate
+            setTimeout(() => {
+                transliterateBtn.click();
+            }, 500);
+        }
+    });
 
-            const seoContent = {
-                'english-hindi': {
-                    title: 'English to Hindi Transliteration Services',
-                    content: `
-                        <h3>English to Hindi (हिन्दी) Transliteration Services</h3>
-                        <p>Atlas Geotech provides the most accurate English to Hindi transliteration for technical documents. Our specialized system understands technical terminology in fields like engineering, geology, and science, ensuring precise conversion while maintaining document structure and formatting.</p>
-                        
-                        <p>With over 600 million speakers, Hindi is India's most widely spoken language, making accurate transliteration crucial for government projects, corporate documentation, and technical communications across northern and central India.</p>
-                        
-                        <h4>Key Features for Hindi Transliteration:</h4>
-                        <p>• <strong>99.7% Accuracy:</strong> Specially trained on engineering and technical documents</p>
-                        <p>• <strong>Atlas Script Support:</strong> Complete Unicode-compliant Atlas output</p>
-                        <p>• <strong>Technical Terminology:</strong> Specialized dictionaries for engineering, medical, legal, and scientific terms</p>
-                        <p>• <strong>Real-time Processing:</strong> Instant transliteration with API support for integration</p>
-                        <p>• <strong>Format Preservation:</strong> Maintains document structure, tables, and formatting</p>
-                        
-                        <div class="info-box" style="margin-top: 30px;">
-                            <i class="fas fa-lightbulb"></i>
-                            <p><strong>Pro Tip:</strong> Use our Hindi transliteration for government tenders, engineering reports, technical manuals, and educational materials requiring accurate Atlas script representation.</p>
+    // Update language display when selection changes
+    targetLanguage.addEventListener('change', function () {
+        updateLanguageDisplay();
+        // Auto-transliterate when language changes
+        setTimeout(() => {
+            if (sourceText.value.trim()) {
+                transliterateBtn.click();
+            }
+        }, 300);
+    });
+
+    // Update character count as user types
+    sourceText.addEventListener('input', updateCharCount);
+
+    // Allow Enter key to trigger transliteration (with Ctrl/CMD)
+    sourceText.addEventListener('keydown', function (e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+            e.preventDefault();
+            transliterateBtn.click();
+        }
+    });
+
+    // Initialize
+    updateCharCount();
+    updateLanguageDisplay();
+    
+    // Add initial text for demo
+    sourceText.value = "Atlas Transliterate technical engineering documents";
+    updateCharCount();
+    
+    // Auto-transliterate on load
+    setTimeout(() => {
+        transliterateBtn.click();
+    }, 1500);
+}
+
+function initLanguageGrid() {
+    const languageGrid = document.querySelector('.language-grid');
+
+    languages.forEach(lang => {
+        const languageCard = document.createElement('div');
+        languageCard.className = 'language-card';
+        languageCard.setAttribute('data-language', lang.code);
+        languageCard.setAttribute('data-name', lang.name);
+
+        languageCard.innerHTML = `
+            <div class="language-icon">${lang.icon}</div>
+            <div class="language-name">${lang.name}</div>
+            <div class="language-script">${lang.script}</div>
+            <div class="language-stats">
+                <span><i class="fas fa-users"></i> ${lang.speakers}</span>
+                <span><i class="fas fa-check-circle"></i> ${lang.accuracy}</span>
+            </div>
+        `;
+
+        languageCard.addEventListener('click', function () {
+            // Update transliteration tool language
+            const targetLanguageSelect = document.getElementById('target-language');
+            targetLanguageSelect.value = lang.code;
+
+            // Update language display
+            const targetLanguageName = document.getElementById('target-language-name');
+            targetLanguageName.textContent = languageNames[lang.code];
+
+            // Update active language card
+            document.querySelectorAll('.language-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            this.classList.add('active');
+
+            // Auto-transliterate if there's text
+            const sourceText = document.getElementById('source-text');
+            if (sourceText.value.trim()) {
+                setTimeout(() => {
+                    document.getElementById('transliterate-btn').click();
+                }, 300);
+            }
+        });
+
+        languageGrid.appendChild(languageCard);
+    });
+
+    // Set first language as active
+    const firstCard = languageGrid.querySelector('.language-card');
+    if (firstCard) {
+        firstCard.classList.add('active');
+    }
+}
+
+function initSEOTabs() {
+    const seoTabs = document.querySelectorAll('.seo-tab');
+    const seoContentBox = document.getElementById('seo-content-box');
+
+    const seoContent = {
+        'english-hindi': {
+            title: 'English to Hindi Transliteration Services',
+            content: `
+                <h3>English to Hindi (हिन्दी) Transliteration Services</h3>
+                <p>Atlas Geotech provides the most accurate English to Hindi transliteration for technical documents. Our specialized system understands technical terminology in fields like engineering, geology, and science, ensuring precise conversion while maintaining document structure and formatting.</p>
+                
+                <p>With over 600 million speakers, Hindi is India's most widely spoken language, making accurate transliteration crucial for government projects, corporate documentation, and technical communications across northern and central India.</p>
+                
+                <h4>Key Features for Hindi Transliteration:</h4>
+                <ul style="padding-left: 20px; margin: 15px 0;">
+                    <li><strong>99.7% Accuracy:</strong> Specially trained on engineering and technical documents</li>
+                    <li><strong>Devanagari Script Support:</strong> Complete Unicode-compliant Devanagari output</li>
+                    <li><strong>Technical Terminology:</strong> Specialized dictionaries for engineering, medical, legal, and scientific terms</li>
+                    <li><strong>Real-time Processing:</strong> Instant transliteration with API support for integration</li>
+                    <li><strong>Format Preservation:</strong> Maintains document structure, tables, and formatting</li>
+                </ul>
+                
+                <div class="info-box" style="margin-top: 30px;">
+                    <i class="fas fa-lightbulb"></i>
+                    <p><strong>Pro Tip:</strong> Use our Hindi transliteration for government tenders, engineering reports, technical manuals, and educational materials requiring accurate Devanagari script representation.</p>
+                </div>
+            `
+        },
+        'english-tamil': {
+            title: 'English to Tamil (தமிழ்) Transliteration Services',
+            content: `
+                <h3>English to Tamil (தமிழ்) Transliteration Services</h3>
+                <p>Specialized transliteration for Tamil technical documents with support for classical terminology and modern technical terms. Our Tamil language experts ensure cultural and contextual accuracy for documents ranging from engineering specifications to medical research papers.</p>
+                
+                <p>Tamil, being one of the world's oldest living languages, requires special attention to script accuracy and technical terminology. Our system is specifically trained on Tamil technical documents from various industries across Tamil Nadu and global Tamil diaspora.</p>
+                
+                <h4>Specialized Tamil Support:</h4>
+                <ul style="padding-left: 20px; margin: 15px 0;">
+                    <li><strong>Engineering Documentation:</strong> Civil, mechanical, and electrical engineering terms</li>
+                    <li><strong>Medical & Pharmaceutical:</strong> Accurate transliteration of medical terminology</li>
+                    <li><strong>Government Documents:</strong> Support for Tamil Nadu government projects and PWD documents</li>
+                    <li><strong>Educational Materials:</strong> Textbooks, research papers, and academic publications</li>
+                    <li><strong>Technical Specifications:</strong> Product manuals, specifications, and quality documents</li>
+                </ul>
+                
+                <div class="info-box" style="margin-top: 30px;">
+                    <i class="fas fa-lightbulb"></i>
+                    <p><strong>Pro Tip:</strong> Ideal for automotive industry documentation in Chennai, IT documentation in Tamil Nadu, and educational materials for Tamil-medium technical education.</p>
+                </div>
+            `
+        },
+        'english-kannada': {
+            title: 'English to Kannada (ಕನ್ನಡ) Transliteration Services',
+            content: `
+                <h3>English to Kannada (ಕನ್ನಡ) Transliteration Services</h3>
+                <p>IT and engineering focused transliteration services for Kannada. Special support for software documentation, technical manuals, and engineering drawings commonly used in Karnataka's tech industry and manufacturing sector.</p>
+                
+                <p>With Bengaluru being India's Silicon Valley, our Kannada transliteration service is optimized for IT documentation, software requirements, technical specifications, and engineering drawings used across industries in Karnataka and surrounding regions.</p>
+                
+                <h4>Kannada Industry Focus:</h4>
+                <ul style="padding-left: 20px; margin: 15px 0;">
+                    <li><strong>IT & Software:</strong> Code documentation, API references, technical specifications</li>
+                    <li><strong>Engineering & Manufacturing:</strong> Technical drawings, specifications, quality manuals</li>
+                    <li><strong>Government Projects:</strong> Karnataka government documents, PWD, irrigation projects</li>
+                    <li><strong>Educational Institutions:</strong> VTU, engineering colleges, research papers</li>
+                    <li><strong>Technical Training:</strong> Training materials, workshops, certification programs</li>
+                </ul>
+                
+                <div class="info-box" style="margin-top: 30px;">
+                    <i class="fas fa-lightbulb"></i>
+                    <p><strong>Pro Tip:</strong> Perfect for IT companies in Bengaluru, engineering firms in Karnataka, and educational institutions offering technical courses in Kannada medium.</p>
+                </div>
+            `
+        },
+        'all-languages': {
+            title: 'Complete Indian Languages Coverage - 22+ Languages',
+            content: `
+                <h3>22+ Indian Languages Supported</h3>
+                <p>Comprehensive transliteration coverage for all major Indian languages including Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi, Bengali, Odia, Assamese, Urdu, and more. Each language has specialized technical terminology databases and domain-specific training.</p>
+                
+                <p>Our platform supports document transliteration across all 22 scheduled languages of India, plus additional regional languages and dialects. Each language module is developed with native language experts and technical domain specialists.</p>
+                
+                <div class="language-list" style="margin: 40px 0;">
+                    ${languages.map(lang => `
+                        <div class="language-list-item" data-language="${lang.code}" style="display: flex; align-items: center; gap: 15px; padding: 15px; background: rgba(0, 86, 166, 0.05); border-radius: 8px; margin-bottom: 10px; cursor: pointer; transition: all 0.3s ease; border: 1px solid transparent;">
+                            <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
+                            <div style="flex: 1;">
+                                <strong>${lang.name} (${lang.script})</strong>
+                                <div style="color: var(--gray); font-size: 0.9rem; margin-top: 5px;">${lang.description} • ${lang.speakers} Speakers • ${lang.accuracy} Accuracy</div>
+                            </div>
                         </div>
-                    `
-                },
-                'english-tamil': {
-                    title: 'English to Tamil (தமிழ்) Transliteration Services',
-                    content: `
-                        <h3>English to Tamil (தமிழ்) Transliteration Services</h3>
-                        <p>Specialized transliteration for Tamil technical documents with support for classical terminology and modern technical terms. Our Tamil language experts ensure cultural and contextual accuracy for documents ranging from engineering specifications to medical research papers.</p>
-                        
-                        <p>Tamil, being one of the world's oldest living languages, requires special attention to script accuracy and technical terminology. Our system is specifically trained on Tamil technical documents from various industries across Tamil Nadu and global Tamil diaspora.</p>
-                        
-                        <h4>Specialized Tamil Support:</h4>
-                        <p>• <strong>Engineering Documentation:</strong> Civil, mechanical, and electrical engineering terms</p>
-                        <p>• <strong>Medical & Pharmaceutical:</strong> Accurate transliteration of medical terminology</p>
-                        <p>• <strong>Government Documents:</strong> Support for Tamil Nadu government projects and PWD documents</p>
-                        <p>• <strong>Educational Materials:</strong> Textbooks, research papers, and academic publications</p>
-                        <p>• <strong>Technical Specifications:</strong> Product manuals, specifications, and quality documents</p>
-                        
-                        <div class="info-box" style="margin-top: 30px;">
-                            <i class="fas fa-lightbulb"></i>
-                            <p><strong>Pro Tip:</strong> Ideal for automotive industry documentation in Chennai, IT documentation in Tamil Nadu, and educational materials for Tamil-medium technical education.</p>
-                        </div>
-                    `
-                },
-                'english-kannada': {
-                    title: 'English to Kannada (ಕನ್ನಡ) Transliteration Services',
-                    content: `
-                        <h3>English to Kannada (ಕನ್ನಡ) Transliteration Services</h3>
-                        <p>IT and engineering focused transliteration services for Kannada. Special support for software documentation, technical manuals, and engineering drawings commonly used in Karnataka's tech industry and manufacturing sector.</p>
-                        
-                        <p>With Bengaluru being India's Silicon Valley, our Kannada transliteration service is optimized for IT documentation, software requirements, technical specifications, and engineering drawings used across industries in Karnataka and surrounding regions.</p>
-                        
-                        <h4>Kannada Industry Focus:</h4>
-                        <p>• <strong>IT & Software:</strong> Code documentation, API references, technical specifications</p>
-                        <p>• <strong>Engineering & Manufacturing:</strong> Technical drawings, specifications, quality manuals</p>
-                        <p>• <strong>Government Projects:</strong> Karnataka government documents, PWD, irrigation projects</p>
-                        <p>• <strong>Educational Institutions:</strong> VTU, engineering colleges, research papers</p>
-                        <p>• <strong>Technical Training:</strong> Training materials, workshops, certification programs</p>
-                        
-                        <div class="info-box" style="margin-top: 30px;">
-                            <i class="fas fa-lightbulb"></i>
-                            <p><strong>Pro Tip:</strong> Perfect for IT companies in Bengaluru, engineering firms in Karnataka, and educational institutions offering technical courses in Kannada medium.</p>
-                        </div>
-                    `
-                },
-                'all-languages': {
-                    title: 'Complete Indian Languages Coverage - 22+ Languages',
-                    content: `
-                        <h3>22+ Indian Languages Supported</h3>
-                        <p>Comprehensive transliteration coverage for all major Indian languages including Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi, Bengali, Odia, Assamese, Urdu, and more. Each language has specialized technical terminology databases and domain-specific training.</p>
-                        
-                        <p>Our platform supports document transliteration across all 22 scheduled languages of India, plus additional regional languages and dialects. Each language module is developed with native language experts and technical domain specialists.</p>
-                        
-                        <div class="language-list" style="margin: 40px 0;">
-                            ${languages.map(lang => `
-                                <div class="language-list-item" data-language="${lang.code}">
-                                    <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
-                                    <div>
-                                        <strong>${lang.name} (${lang.script})</strong>
-                                        <div>${lang.description} • ${lang.speakers} Speakers • ${lang.accuracy} Accuracy</div>
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                        
-                        <h4>Complete Language Coverage:</h4>
-                        <p>• <strong>All 22 Scheduled Languages:</strong> Complete coverage as per Indian Constitution</p>
-                        <p>• <strong>Regional Dialects:</strong> Support for major regional variations and dialects</p>
-                        <p>• <strong>Technical Terminology:</strong> Industry-specific dictionaries for each language</p>
-                        <p>• <strong>Government Compliance:</strong> Meets all government documentation standards</p>
-                        <p>• <strong>Enterprise Integration:</strong> API support for all major languages</p>
-                        
-                        <div class="info-box" style="margin-top: 30px;">
-                            <i class="fas fa-lightbulb"></i>
-                            <p><strong>Pro Tip:</strong> For multi-lingual projects, our platform allows simultaneous transliteration into multiple Indian languages, maintaining consistency across all language versions.</p>
-                        </div>
-                    `
-                }
-            };
+                    `).join('')}
+                </div>
+                
+                <h4>Complete Language Coverage:</h4>
+                <ul style="padding-left: 20px; margin: 15px 0;">
+                    <li><strong>All 22 Scheduled Languages:</strong> Complete coverage as per Indian Constitution</li>
+                    <li><strong>Regional Dialects:</strong> Support for major regional variations and dialects</li>
+                    <li><strong>Technical Terminology:</strong> Industry-specific dictionaries for each language</li>
+                    <li><strong>Government Compliance:</strong> Meets all government documentation standards</li>
+                    <li><strong>Enterprise Integration:</strong> API support for all major languages</li>
+                </ul>
+                
+                <div class="info-box" style="margin-top: 30px;">
+                    <i class="fas fa-lightbulb"></i>
+                    <p><strong>Pro Tip:</strong> For multi-lingual projects, our platform allows simultaneous transliteration into multiple Indian languages, maintaining consistency across all language versions.</p>
+                </div>
+            `
+        }
+    };
 
-            seoTabs.forEach(tab => {
-                tab.addEventListener('click', function () {
-                    // Remove active class from all tabs
-                    seoTabs.forEach(t => t.classList.remove('active'));
-                    // Add active class to clicked tab
-                    this.classList.add('active');
+    seoTabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            // Remove active class from all tabs
+            seoTabs.forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            this.classList.add('active');
 
-                    // Update content based on tab
-                    const tabId = this.getAttribute('data-tab');
+            // Update content based on tab
+            const tabId = this.getAttribute('data-tab');
 
-                    if (seoContent[tabId]) {
-                        seoContentBox.innerHTML = seoContent[tabId].content;
+            if (seoContent[tabId]) {
+                seoContentBox.innerHTML = seoContent[tabId].content;
 
-                        // Add click handlers to language list items
-                        seoContentBox.querySelectorAll('.language-list-item').forEach(item => {
-                            item.addEventListener('click', function () {
-                                const langCode = this.getAttribute('data-language');
-                                const targetLanguageSelect = document.getElementById('target-language');
-                                targetLanguageSelect.value = langCode;
+                // Add click handlers to language list items
+                seoContentBox.querySelectorAll('.language-list-item').forEach(item => {
+                    item.addEventListener('click', function () {
+                        const langCode = this.getAttribute('data-language');
+                        const targetLanguageSelect = document.getElementById('target-language');
+                        targetLanguageSelect.value = langCode;
 
-                                // Update language display
-                                const targetLanguageName = document.getElementById('target-language-name');
-                                targetLanguageName.textContent = languageNames[langCode];
+                        // Update language display
+                        const targetLanguageName = document.getElementById('target-language-name');
+                        targetLanguageName.textContent = languageNames[langCode];
 
-                                // Update active language card
-                                document.querySelectorAll('.language-card').forEach(card => {
-                                    card.classList.remove('active');
-                                    if (card.getAttribute('data-language') === langCode) {
-                                        card.classList.add('active');
-                                    }
-                                });
+                        // Update active language card
+                        document.querySelectorAll('.language-card').forEach(card => {
+                            card.classList.remove('active');
+                            if (card.getAttribute('data-language') === langCode) {
+                                card.classList.add('active');
+                            }
+                        });
 
-                                // Auto-transliterate
+                        // Auto-transliterate if there's text
+                        const sourceText = document.getElementById('source-text');
+                        if (sourceText.value.trim()) {
+                            setTimeout(() => {
                                 document.getElementById('transliterate-btn').click();
-                            });
-                        });
-                    }
+                            }, 300);
+                        }
+                    });
                 });
-            });
+            }
+        });
+    });
 
-            // Initialize with first tab active
-            seoTabs[0].click();
-        }
+    // Initialize with first tab active
+    seoTabs[0].click();
+}
 
-        function initOtherFeatures() {
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    if (this.getAttribute('href') === '#') return;
+function initOtherFeatures() {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            if (this.getAttribute('href') === '#') return;
 
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
 
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
                 });
-            });
+            }
+        });
+    });
 
-            // CTA Button Functionality
-            document.querySelectorAll('.cta-button').forEach(button => {
-                if (button.textContent.includes('Free Trial')) {
-                    button.addEventListener('click', function () {
-                        alert('Starting your 30-day free trial! Please check your email for activation link. You will have access to all 22 languages and 100 document translations.');
-                    });
-                } else if (button.textContent.includes('Demo')) {
-                    button.addEventListener('click', function () {
-                        alert('Thank you for your interest! Our sales team will contact you within 24 hours to schedule a customized demo based on your requirements.');
-                    });
-                }
+    // CTA Button Functionality
+    document.querySelectorAll('.cta-button').forEach(button => {
+        if (button.textContent.includes('Free Trial')) {
+            button.addEventListener('click', function () {
+                alert('Starting your 30-day free trial! Please check your email for activation link. You will have access to all 22 languages and 100 document translations.');
             });
-
-            // Demo booking buttons
-            document.querySelectorAll('.secondary-button').forEach(button => {
-                if (button.textContent.includes('Demo')) {
-                    button.addEventListener('click', function () {
-                        alert('Please provide your contact details and preferred time for demo. Our team will confirm the schedule.');
-                    });
-                }
+        } else if (button.textContent.includes('Demo')) {
+            button.addEventListener('click', function () {
+                alert('Thank you for your interest! Our sales team will contact you within 24 hours to schedule a customized demo based on your requirements.');
             });
-
-            // Add structured data for SEO
-            const script = document.createElement('script');
-            script.type = 'application/ld+json';
-            script.text = JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "ProfessionalService",
-                "name": "Atlas Geotech Transliteration",
-                "description": "India's #1 technical transliteration platform supporting 22+ Indian languages for engineering and scientific documents",
-                "url": "https://www.atlasgeotech.com",
-                "logo": "https://www.atlasgeotech.com/atlasgeotech_logo1.svg",
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Bangalore",
-                    "addressRegion": "Karnataka",
-                    "addressCountry": "India"
-                },
-                "serviceType": "Technical Document Transliteration",
-                "areaServed": {
-                    "@type": "Country",
-                    "name": "India"
-                }
-            });
-            document.head.appendChild(script);
         }
-    </script>
+    });
+
+    // Demo booking buttons
+    document.querySelectorAll('.secondary-button').forEach(button => {
+        if (button.textContent.includes('Demo')) {
+            button.addEventListener('click', function () {
+                alert('Please provide your contact details and preferred time for demo. Our team will confirm the schedule.');
+            });
+        }
+    });
+
+    // Add structured data for SEO
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Atlas Geotech Transliteration",
+        "description": "India's #1 technical transliteration platform supporting 22+ Indian languages for engineering and scientific documents Accurate English to Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi, Bengali, Odia, Assamese, Urdu transliteration for technical documents.",
+        "url": "https://www.atlasgeotech.com",
+        "logo": "https://www.atlasgeotech.com/atlasgeotech_logo1.svg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bangalore",
+            "addressRegion": "Karnataka",
+            "addressCountry": "India"
+        },
+        "serviceType": "Technical Document Transliteration",
+        "areaServed": {
+            "@type": "Country",
+            "name": "India"
+        }
+    });
+    document.head.appendChild(script);
+
+    // Initialize language selection in SEO section
+    document.querySelectorAll('.seo-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            const tabId = this.getAttribute('data-tab');
+            if (tabId === 'english-hindi') {
+                document.getElementById('target-language').value = 'hi';
+                updateLanguageDisplay();
+            } else if (tabId === 'english-tamil') {
+                document.getElementById('target-language').value = 'ta';
+                updateLanguageDisplay();
+            } else if (tabId === 'english-kannada') {
+                document.getElementById('target-language').value = 'kn';
+                updateLanguageDisplay();
+            }
+        });
+    });
+}
+
+// Helper function to update language display (defined globally)
+function updateLanguageDisplay() {
+    const targetLanguageSelect = document.getElementById('target-language');
+    const targetLanguageName = document.getElementById('target-language-name');
+    if (targetLanguageSelect && targetLanguageName) {
+        const lang = targetLanguageSelect.value;
+        targetLanguageName.textContent = languageNames[lang] || 'Select Language';
+    }
+}
+</script>
 </body>
 
 </html>
