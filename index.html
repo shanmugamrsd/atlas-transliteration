@@ -1,0 +1,3209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Geotech Languages Transliteration | #1 Indian Languages transliteration</title>
+    <meta name="description"
+        content="India's #1 technical transliteration platform supporting 22+ Indian languages. Accurate English to Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi, Bengali, Odia, Assamese, Urdu transliteration for technical documents.">
+    <meta name="keywords"
+        content="English to Hindi transliteration, English to Tamil, English to Telugu, English to Kannada, Indian languages transliteration, technical document translation, engineering document transliteration">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://atlasgeotech.com/atlasgeotech_logo1.svg">
+<link rel="apple-touch-icon" href="https://atlasgeotech.com/atlasgeotech_logo1.svg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0056a6;
+            --primary-dark: #003d75;
+            --secondary: #2e8540;
+            --secondary-dark: #20672f;
+            --accent: #ff6b35;
+            --accent-light: #ff8b5c;
+            --dark: #1a2b3c;
+            --dark-light: #2d3e50;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --white: #ffffff;
+            --success: #28a745;
+            --warning: #ffc107;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --box-shadow-heavy: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 0.85rem;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-bar a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            opacity: 0.9;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo-image {
+            height: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .logo-image {
+                height: 40px;
+            }
+        }
+
+        .logo-title {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--dark);
+        }
+
+        .logo-tagline {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .dropdown {
+            position: absolute;
+            background: var(--white);
+            box-shadow: var(--box-shadow-heavy);
+            border-radius: var(--border-radius);
+            padding: 15px 0;
+            min-width: 220px;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .nav-links li:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown a {
+            padding: 12px 20px;
+            display: block;
+            white-space: nowrap;
+            color: var(--dark);
+        }
+
+        .dropdown a:hover {
+            background: rgba(0, 86, 166, 0.05);
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 86, 166, 0.2);
+        }
+
+        /* Mobile Menu Styles */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: block;
+                order: 2;
+            }
+
+            .navbar {
+                position: relative;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -300px;
+                width: 300px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 100px 30px 30px;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                overflow-y: auto;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .nav-links a {
+                padding: 15px 0;
+                width: 100%;
+                border-bottom: 1px solid var(--gray-light);
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                box-shadow: none;
+                padding: 10px 0 10px 20px;
+                display: none;
+                background: var(--light);
+                border-radius: 0 0 var(--border-radius) var(--border-radius);
+                margin-top: -1px;
+            }
+
+            .nav-links li.active .dropdown {
+                display: block;
+            }
+
+            .dropdown a {
+                padding: 12px 0;
+            }
+
+            .navbar .cta-button {
+                order: 1;
+                margin-right: 15px;
+            }
+
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+
+            .overlay.active {
+                display: block;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar .cta-button {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                gap: 8px;
+            }
+
+            .logo-title {
+                font-size: 16px;
+            }
+
+            .logo-tagline {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .logo-title {
+                display: none;
+            }
+
+            .logo-tagline {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .hero-highlight {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 107, 53, 0.2);
+            z-index: -1;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: var(--gray);
+            max-width: 700px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .secondary-button {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .secondary-button:hover {
+            background-color: rgba(0, 86, 166, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Hero Section */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                gap: 25px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cta-button,
+            .secondary-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                gap: 20px;
+                justify-content: space-between;
+            }
+
+            .stat-item {
+                flex: 1;
+                min-width: 45%;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+        }
+/* HERO WRAPPER */
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* BRAND ANIMATION CONTAINER */
+/* BRAND CONTAINER */
+.brand-animation {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    margin-left: auto;
+    padding-left: 80px;
+    overflow: hidden;
+}
+
+#bigLetter {
+    position: absolute;
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0;
+    transform: scale(1);
+    transition: 
+        transform 0.8s cubic-bezier(.4,0,.2,1),
+        opacity 0.8s ease,
+        left 0.8s ease,
+        top 0.8s ease;
+    will-change: transform, left, top;
+}
+/* LETTER STACK (CENTER CLUSTER) */
+#letterStack {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 140px;
+}
+
+/* ROUND LETTERS */
+#letterStack span {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.4);
+    transition: 
+        transform 0.6s cubic-bezier(.4,0,.2,1),
+        opacity 0.6s ease,
+        background-color 0.6s ease;
+}
+
+/* FINAL BRAND TEXT */
+#finalText {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.92);
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    color: var(--primary);
+    opacity: 0;
+    transition: 
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+/* FINAL TEXT VISIBLE */
+#finalText.show {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+/* MOBILE SAFETY */
+@media (max-width: 992px) {
+    .brand-animation {
+        display: none;
+    }
+}
+/* BIG LETTER */
+.big-letter {
+    position: absolute;
+    font-size: 90px;
+    font-weight: 900;
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+
+/* STACK */
+.letter-stack {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* BUBBLES */
+.letter-stack span {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.4);
+    transition: all 0.5s ease;
+}
+
+/* FINAL TEXT */
+.final-text {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* MOBILE HIDE */
+@media (max-width: 992px) {
+    .brand-animation {
+        display: none;
+    }
+}
+
+
+        /* Transliteration Tool Section */
+        .transliteration-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 100%);
+            border-top: 1px solid rgba(0, 86, 166, 0.1);
+            border-bottom: 1px solid rgba(0, 86, 166, 0.1);
+        }
+
+        .transliteration-tool {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-heavy);
+            padding: 40px;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .transliteration-tool::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .transliteration-panels {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .panel {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: var(--light);
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .language-selector {
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+        }
+
+        .language-selector label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .language-display {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        #target-language,
+        #source-language {
+            padding: 12px 15px;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            background-color: var(--white);
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        #target-language:focus,
+        #source-language:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 86, 166, 0.1);
+        }
+
+        .panel-content {
+            flex: 1;
+            padding: 25px;
+            position: relative;
+            min-height: 300px;
+        }
+
+        #source-text {
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+            border: none;
+            resize: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--dark);
+            background: transparent;
+        }
+
+        #source-text:focus {
+            outline: none;
+        }
+
+        .text-counter {
+            position: absolute;
+            bottom: 15px;
+            right: 25px;
+            font-size: 0.85rem;
+            color: var(--gray);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+
+        .control-panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .swap-btn {
+            background: var(--gray-light);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--dark);
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .swap-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: rotate(180deg) scale(1.1);
+        }
+
+        #transliterate-btn {
+            padding: 15px 35px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .clear-btn,
+        .copy-btn {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .clear-btn:hover,
+        .copy-btn:hover {
+            color: var(--primary);
+            background: rgba(0, 86, 166, 0.1);
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .result-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--dark);
+            min-height: 250px;
+            padding: 10px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .result-meta {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sample-terms {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .sample-terms h5 {
+            margin-bottom: 15px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+
+        .term-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .term-tag {
+            background-color: rgba(0, 86, 166, 0.08);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 86, 166, 0.2);
+        }
+
+        .term-tag:hover {
+            background-color: rgba(0, 86, 166, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .tool-info {
+            margin-top: 30px;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background-color: rgba(46, 133, 64, 0.08);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .info-box i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: var(--dark);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--gray-light);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Word-by-word transliteration styles */
+        .word-breakdown {
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            border-left: 3px solid var(--primary);
+        }
+
+        .breakdown-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .word-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 86, 166, 0.1);
+        }
+
+        .word-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .original-word {
+            font-weight: 600;
+            color: var(--primary);
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .transliterated-word {
+            font-weight: 600;
+            color: var(--secondary);
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        /* Responsive Transliteration Tool */
+        @media (max-width: 1200px) {
+            .transliteration-panels {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+            }
+
+            .control-panel {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 20px;
+            }
+
+            .swap-btn {
+                order: 2;
+            }
+
+            #transliterate-btn {
+                order: 1;
+                flex: 1;
+                margin: 0 15px;
+            }
+
+            .language-selector {
+                order: 3;
+                min-width: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .transliteration-tool {
+                padding: 25px;
+            }
+
+            .panel-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .language-selector {
+                width: 100%;
+            }
+
+            .result-actions {
+                align-self: flex-end;
+            }
+
+            .control-panel {
+                flex-wrap: wrap;
+            }
+
+            #transliterate-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .swap-btn {
+                order: 1;
+            }
+
+            .language-selector {
+                order: 2;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .transliteration-tool {
+                padding: 20px;
+            }
+
+            .panel-content {
+                padding: 20px;
+                min-height: 200px;
+            }
+
+            #source-text {
+                min-height: 150px;
+                font-size: 1rem;
+            }
+
+            .result-text {
+                min-height: 150px;
+                font-size: 1rem;
+            }
+
+            .control-panel {
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .term-tags {
+                gap: 8px;
+            }
+
+            .term-tag {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Language Grid Section */
+        .language-grid-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 30px auto 0;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .language-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .language-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .language-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .language-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 86, 166, 0.1);
+        }
+
+        .language-card.active {
+            border-color: var(--secondary);
+            background: linear-gradient(135deg, rgba(46, 133, 64, 0.05) 0%, rgba(46, 133, 64, 0.02) 100%);
+        }
+
+        .language-card.active::before {
+            transform: scaleX(1);
+        }
+
+        .language-icon {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: 700;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .language-name {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .language-script {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            min-height: 30px;
+            font-weight: 500;
+        }
+
+        .language-stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        /* Responsive Language Grid */
+        @media (max-width: 768px) {
+            .language-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 20px;
+            }
+
+            .language-card {
+                padding: 25px 20px;
+            }
+
+            .language-icon {
+                font-size: 2.2rem;
+                height: 50px;
+            }
+
+            .language-name {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .language-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .language-card {
+                padding: 20px 15px;
+            }
+
+            .language-icon {
+                font-size: 1.8rem;
+                height: 40px;
+                margin-bottom: 15px;
+            }
+
+            .language-name {
+                font-size: 1rem;
+            }
+
+            .language-script {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            background-color: rgba(0, 86, 166, 0.1);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            background-color: rgba(0, 86, 166, 0.15);
+            transform: scale(1.1);
+        }
+
+        .feature-icon i {
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        /* SEO Content Section */
+        .seo-content {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 100%);
+        }
+
+        .seo-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--gray-light);
+            padding-bottom: 20px;
+        }
+
+        .seo-tab {
+            padding: 12px 28px;
+            background: var(--white);
+            border: 2px solid var(--gray-light);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            color: var(--gray);
+        }
+
+        .seo-tab.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 86, 166, 0.2);
+        }
+
+        .seo-content-box {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 50px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .seo-content-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        /* Industries Section */
+        .industries-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .industry-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 35px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .industry-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .industry-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* UPDATED Documentation Section */
+        .documentation-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 1200px) {
+            .docs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .docs-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .docs-category {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .docs-category {
+                padding: 25px 20px;
+            }
+
+            .docs-category h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        .docs-category {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .docs-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .docs-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .docs-category h3 {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--gray-light);
+        }
+
+        .docs-category h3 i {
+            color: var(--primary);
+            font-size: 1.8rem;
+            width: 40px;
+            text-align: center;
+        }
+
+        .docs-list {
+            list-style: none;
+        }
+
+        .docs-list li {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--gray-light);
+            transition: var(--transition);
+        }
+
+        .docs-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .docs-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .docs-list a {
+            text-decoration: none;
+            color: var(--dark);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            transition: var(--transition);
+        }
+
+        .docs-list a:hover {
+            color: var(--primary);
+        }
+
+        .docs-list i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 3px;
+            width: 24px;
+            text-align: center;
+        }
+
+        .docs-list .doc-title {
+            flex: 1;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .docs-list .doc-desc {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M500,97C126,98,0,86,0,86V0H1000V86C1000,86,874,98,500,97Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 100% 100px;
+            background-position: bottom;
+            background-repeat: no-repeat;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,0V100H1000V0C874,0,500,100,0,0Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 100% 100px;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            footer {
+                padding: 60px 0 30px;
+            }
+        }
+
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-column p {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Section Title Responsive */
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .section-title p {
+                font-size: 1rem;
+            }
+
+            .features-section,
+            .seo-content,
+            .industries-section,
+            .documentation-section,
+            .testimonials-section,
+            .cta-section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .features-grid,
+            .industries-grid {
+                gap: 20px;
+            }
+
+            .feature-card,
+            .industry-card {
+                padding: 30px 20px;
+            }
+
+            .seo-tabs {
+                justify-content: center;
+            }
+
+            .seo-tab {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .seo-content-box {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Additional Mobile Optimizations */
+        @media (max-width: 400px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .stat-number {
+                font-size: 1.6rem;
+            }
+
+            .language-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            }
+
+            .feature-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .feature-icon i {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <span><i class="fas fa-award"></i> India's #1 Technical Transliteration Platform</span>
+                <div>
+                    <a href="tel:+919486189176"><i class="fas fa-phone"></i> +91 9486189176</a>
+                    <a href="mailto:conduct@atlasgeotech.com"><i class="fas fa-envelope"></i>
+                        conduct@atlasgeotech.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="https://atlasgeotech.com/" class="logo">
+                    <img src="https://atlasgeotech.com/atlasgeotech_logo1.svg" alt="Atlas Geotech Logo"
+                        class="logo-image">
+                    <div>
+                        <div class="logo-title">Atlas Geotech</div>
+                        <div class="logo-tagline">Transliteration Solutions</div>
+                    </div>
+                </a>
+
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="overlay" id="overlay"></div>
+
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#transliteration-tool"><i class="fas fa-language"></i> Transliteration Tool</a></li>
+                    <li><a href="#languages"><i class="fas fa-globe-asia"></i> Languages</a></li>
+                    <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+                    <li><a href="#industries"><i class="fas fa-industry"></i> Industries</a></li>
+                    <li><a href="#documentation"><i class="fas fa-book"></i> Documentation</a></li>
+                </ul>
+
+                <button class="cta-button">
+                    <i class="fas fa-desktop"></i> Request Demo
+                </button>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+   <section class="hero">
+    <div class="container hero-wrapper">
+
+        <!-- LEFT CONTENT -->
+        <div class="hero-content">
+            <h1>
+                <span class="hero-highlight">English to Indian Languages</span>
+                Transliteration for Technical Documents
+            </h1>
+
+            <p>
+                India's most advanced platform for accurate transliteration of engineering,
+                geotechnical, and scientific documents across 22+ Indian languages.
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">22+</div>
+                    <div class="stat-label">Indian Languages</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.5%</div>
+                    <div class="stat-label">Accuracy Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Documents Processed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Enterprise Clients</div>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <button class="cta-button">
+                    <i class="fas fa-rocket"></i> Start Free Trial
+                </button>
+                <button class="secondary-button">
+                    <i class="fas fa-calendar"></i> Book a Demo
+                </button>
+            </div>
+        </div>
+
+        <!-- RIGHT BRAND ANIMATION -->
+        <div class="brand-animation">
+    <div class="big-letter" id="bigLetter"></div>
+    <div class="letter-stack" id="letterStack"></div>
+    <div class="final-text" id="finalText">Atlas Transliteration</div>
+</div>
+
+    </div>
+</section>
+
+
+    <!-- Real-Time Transliteration Tool Section -->
+    <section class="transliteration-section" id="transliteration-tool">
+        <div class="container">
+            <div class="section-title">
+                <h2>Real-Time Technical Transliteration Tool</h2>
+                <p>Experience our technology firsthand. Input technical terms or sentences in English and see them
+                    accurately transliterated into various regional scripts, preserving technical meaning and spacing.
+                </p>
+            </div>
+
+            <div class="transliteration-tool">
+                <!-- Dual Panel Layout -->
+                <div class="transliteration-panels">
+                    <!-- Left Panel: Input -->
+                    <div class="panel input-panel">
+                        <div class="panel-header">
+                            <div class="language-selector">
+                                <label for="source-language"><i class="fas fa-language"></i> Input Language</label>
+                                <select id="source-language">
+                                    <option value="en">English</option>
+                                </select>
+                            </div>
+                            <button class="clear-btn" id="clear-input" title="Clear text">
+                                <i class="fas fa-times"></i> Clear
+                            </button>
+                        </div>
+                        <div class="panel-content">
+                            <textarea id="source-text"
+                                placeholder="Enter technical terms or sentences here...">Atlas-Transliterate</textarea>
+                            <div class="text-counter">
+                                <span id="char-count">86</span> characters
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Middle: Control Panel -->
+                    <div class="control-panel">
+                        <button id="swap-languages" class="swap-btn" title="Swap languages">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        <button id="transliterate-btn" class="cta-button">
+                            <i class="fas fa-play"></i> Transliterate
+                        </button>
+                        <div class="language-selector">
+                            <label for="target-language"><i class="fas fa-language"></i> Target Script</label>
+                            <select id="target-language">
+                                <option value="hi">Hindi (हिन्दी)</option>
+                                <option value="ta">Tamil (தமிழ்)</option>
+                                <option value="te">Telugu (తెలుగు)</option>
+                                <option value="kn">Kannada (ಕನ್ನಡ)</option>
+                                <option value="ml">Malayalam (മലയാളം)</option>
+                                <option value="mr">Marathi (मराठी)</option>
+                                <option value="gu">Gujarati (ગુજરાતી)</option>
+                                <option value="pa">Punjabi (ਪੰਜਾਬੀ)</option>
+                                <option value="bn">Bengali (বাংলা)</option>
+                                <option value="as">Assamese (অসমীয়া)</option>
+                                <option value="or">Odia (ଓଡ଼ିଆ)</option>
+                                <option value="ur">Urdu (اردو)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel: Output -->
+                    <div class="panel output-panel">
+                        <div class="panel-header">
+                            <div class="language-display">
+                                <i class="fas fa-language"></i>
+                                <span id="target-language-name">Hindi (हिन्दी)</span>
+                            </div>
+                            <div class="result-actions">
+                                <button class="copy-btn" id="copy-result" title="Copy to clipboard">
+                                    <i class="far fa-copy"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+                        <div class="panel-content">
+                            <div id="transliteration-result" class="result-text">
+                                <!-- Result will appear here -->
+                            </div>
+                            <div id="word-breakdown" class="word-breakdown" style="display: none;">
+                                <div class="breakdown-title"><i class="fas fa-list"></i> Word-by-word transliteration:
+                                </div>
+                                <div id="word-list"></div>
+                            </div>
+                            <div class="result-meta" id="result-meta">
+                                <!-- Status info will appear here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Terms -->
+                <div class="sample-terms">
+                    <h5><i class="fas fa-lightbulb"></i> Try these technical terms:</h5>
+                    <div class="term-tags">
+                        <span class="term-tag" data-text="Geotechnical investigation">Geotechnical investigation</span>
+                        <span class="term-tag" data-text="Soil analysis report">Soil analysis report</span>
+                        <span class="term-tag" data-text="Foundation engineering">Foundation engineering</span>
+                        <span class="term-tag" data-text="Structural design specification">Structural design
+                            specification</span>
+                        <span class="term-tag" data-text="Concrete compressive strength">Concrete compressive
+                            strength</span>
+                        <span class="term-tag" data-text="Bearing capacity analysis">Bearing capacity analysis</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-info">
+                <div class="info-box">
+                    <i class="fas fa-info-circle"></i>
+                    <p>This tool preserves original spacing and transliterates each word separately for accurate
+                        technical terminology representation. Our AI-powered system ensures 99.5%+ accuracy for
+                        technical terms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Grid Section -->
+    <section class="language-grid-section" id="languages">
+        <div class="container">
+            <div class="section-title">
+                <h2>22+ Indian Languages Supported</h2>
+                <p>Comprehensive coverage of all major Indian languages with specialized technical terminology</p>
+            </div>
+
+            <div class="language-grid">
+                <!-- Language cards will be generated dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Industry-Leading Features</h2>
+                <p>Advanced technology combined with domain expertise for unmatched accuracy</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>22+ Indian Languages</h3>
+                    <p>Comprehensive coverage including Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati,
+                        Punjabi, Bengali, Odia, Assamese, Urdu and more with specialized technical terminology
+                        databases.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Technical Document Support</h3>
+                    <p>Specialized handling for engineering drawings, geological reports, scientific papers, patents,
+                        technical specifications, and ISO documentation with format preservation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Accuracy</h3>
+                    <p>Machine learning algorithms trained on millions of technical documents ensure 99.5%+ accuracy for
+                        specialized terminology and context-aware transliteration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content" id="seo">
+        <div class="container">
+            <div class="section-title">
+                <h2>Comprehensive Language Solutions</h2>
+                <p>Search engine optimized content for maximum visibility across all Indian language transliteration
+                    needs</p>
+            </div>
+
+            <div class="seo-tabs">
+                <div class="seo-tab active" data-tab="english-hindi">English to Hindi</div>
+                <div class="seo-tab" data-tab="english-tamil">English to Tamil</div>
+                <div class="seo-tab" data-tab="english-telugu">English to Telugu</div>
+                <div class="seo-tab" data-tab="english-kannada">English to Kannada</div>
+                <div class="seo-tab" data-tab="all-languages">All Languages</div>
+            </div>
+
+            <div class="seo-content-box" id="seo-content-box">
+                <!-- SEO content will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries-section" id="industries">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trusted by Industry Leaders</h2>
+                <p>Serving diverse sectors with specialized transliteration needs across India</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <i class="fas fa-hard-hat"></i>
+                    <h4>Engineering & Construction</h4>
+                    <p>L&T, Tata Projects, Shapoorji Pallonji, GMR, NCC</p>
+                </div>
+                <div class="industry-card">
+                    <i class="fas fa-university"></i>
+                    <h4>Government & PSUs</h4>
+                    <p>DRDO, ISRO, Indian Railways, State Governments, PWD</p>
+                </div>
+                <div class="industry-card">
+                    <i class="fas fa-search"></i>
+                    <h4>Research & Academia</h4>
+                    <p>IITs, IISc, CSIR Labs, Research Institutions, Universities</p>
+                </div>
+                <div class="industry-card">
+                    <i class="fas fa-industry"></i>
+                    <h4>Manufacturing</h4>
+                    <p>Mahindra, Godrej, Bharat Forge, Auto Sector, Pharma</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPDATED Documentation Section -->
+    <section class="documentation-section" id="documentation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Comprehensive Documentation</h2>
+                <p>Detailed guides, API documentation, and technical resources for seamless integration</p>
+            </div>
+
+            <div class="docs-grid">
+                <!-- User Guides Category -->
+                <div class="docs-category">
+                    <h3><i class="fas fa-book"></i> User Guides</h3>
+                    <ul class="docs-list">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-file-pdf"></i>
+                                <div>
+                                    <span class="doc-title">Getting Started with Transliteration</span>
+                                    <span class="doc-desc">Complete beginner's guide to using our transliteration platform</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-file-pdf"></i>
+                                <div>
+                                    <span class="doc-title">Technical Document Best Practices</span>
+                                    <span class="doc-desc">Guidelines for preparing documents for optimal transliteration</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-file-pdf"></i>
+                                <div>
+                                    <span class="doc-title">Language-Specific Guidelines</span>
+                                    <span class="doc-desc">Detailed instructions for each supported Indian language</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-file-pdf"></i>
+                                <div>
+                                    <span class="doc-title">Quality Assurance Process</span>
+                                    <span class="doc-desc">Our rigorous quality checks and validation procedures</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- API Documentation Category -->
+                <div class="docs-category">
+                    <h3><i class="fas fa-code"></i> API Documentation</h3>
+                    <ul class="docs-list">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-code"></i>
+                                <div>
+                                    <span class="doc-title">REST API Reference</span>
+                                    <span class="doc-desc">Complete API endpoints, parameters, and response formats</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-code"></i>
+                                <div>
+                                    <span class="doc-title">SDK Libraries</span>
+                                    <span class="doc-desc">Client libraries for Python, JavaScript, Java, and .NET</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-code"></i>
+                                <div>
+                                    <span class="doc-title">Integration Guides</span>
+                                    <span class="doc-desc">Step-by-step integration with popular platforms and tools</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-code"></i>
+                                <div>
+                                    <span class="doc-title">Authentication & Security</span>
+                                    <span class="doc-desc">API security, authentication methods, and best practices</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Learning Resources Category -->
+                <div class="docs-category">
+                    <h3><i class="fas fa-graduation-cap"></i> Learning Resources</h3>
+                    <ul class="docs-list">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-video"></i>
+                                <div>
+                                    <span class="doc-title">Video Tutorials</span>
+                                    <span class="doc-desc">Step-by-step video guides for all features and integrations</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-question-circle"></i>
+                                <div>
+                                    <span class="doc-title">FAQ & Troubleshooting</span>
+                                    <span class="doc-desc">Common issues and solutions for smooth operation</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-project-diagram"></i>
+                                <div>
+                                    <span class="doc-title">Case Studies</span>
+                                    <span class="doc-desc">Real-world implementations and success stories</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-download"></i>
+                                <div>
+                                    <span class="doc-title">Templates & Samples</span>
+                                    <span class="doc-desc">Ready-to-use templates and sample documents</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Trusted by India's leading organizations for accurate technical transliteration</p>
+            </div>
+
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        Atlas Geotech's English to Hindi transliteration service transformed our technical documentation
+                        process. The accuracy for engineering terms is exceptional, and their support team is incredibly
+                        responsive. We've reduced our document processing time by 70%.
+                    </div>
+                    <div class="testimonial-author">Rajesh Kumar</div>
+                    <div class="testimonial-company">Senior Engineer, Larsen & Toubro Infrastructure</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Break Language Barriers?</h2>
+            <p>Join 500+ enterprises using Atlas Geotech for accurate technical document transliteration across all
+                Indian languages. Start your free trial today and experience the difference in quality and accuracy.</p>
+            <div style="margin-top: 40px;">
+                <button class="cta-button light"><i class="fas fa-rocket"></i> Start 30-Day Free Trial</button>
+                <button class="secondary-button" style="color: white; border-color: white; margin-left: 20px;"><i
+                        class="fas fa-phone"></i> Schedule Enterprise Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+
+                <!-- Column 1 -->
+                <div class="footer-column">
+                    <h3>Atlas Geotech</h3>
+                    <p>
+                        Specialized transliteration solutions for technical, geospatial, and scientific
+                        industries across 22+ Indian languages.
+                    </p>
+                    <p style="margin-top: 15px; opacity: 0.7;">
+                        © 2023 Atlas Geotech Transliteration. All rights reserved.
+                    </p>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Web Platform</a></li>
+                        <li><a href="#">Mobile Application</a></li>
+                        <li><a href="#">Enterprise Solutions</a></li>
+                        <li><a href="#documentation">API Documentation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#documentation">Documentation</a></li>
+                        <li><a href="#testimonials">Case Studies</a></li>
+                        <li><a href="#">Technical Glossary</a></li>
+                        <li><a href="#">Industry Standards</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="mailto:info@atlasgeotech.com">Contact</a></li>
+                        <li><a href="#">Security & Compliance</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>
+                    Atlas Geotech Transliteration |
+                    ISO 27001 Certified |
+                    GDPR Compliant |
+                    Made in India
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+const letters = ['த','ह','త','ಕ','മ','A','ব','ଓ','ગ','म'];
+const colors = [
+    '#d32f2f', '#f57c00', '#c2185b', '#2e7d32', '#1565c0',
+    '#0056a6', '#7b1fa2', '#6a1b9a', '#00838f', '#ef6c00'
+];
+
+const bigLetter = document.getElementById('bigLetter');
+const stack = document.getElementById('letterStack');
+const finalText = document.getElementById('finalText');
+
+let index = 0;
+
+function random(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function animateLetter() {
+    if (index < letters.length) {
+        const color = colors[Math.floor(Math.random() * colors.length)];
+
+        // Random position
+        const x = random(20, 180);
+        const y = random(20, 200);
+
+        bigLetter.textContent = letters[index];
+        bigLetter.style.left = x + 'px';
+        bigLetter.style.top = y + 'px';
+        bigLetter.style.color = color;
+        bigLetter.style.opacity = '1';
+        bigLetter.style.transform = 'scale(1)';
+
+        setTimeout(() => {
+            bigLetter.style.opacity = '0';
+            bigLetter.style.transform = 'scale(0.3)';
+
+            // Create bubble
+            const bubble = document.createElement('span');
+            bubble.textContent = letters[index];
+            bubble.style.background = color;
+            stack.appendChild(bubble);
+
+            setTimeout(() => {
+                bubble.style.opacity = '1';
+                bubble.style.transform = 'scale(1)';
+            }, 100);
+
+            index++;
+            setTimeout(animateLetter, 600);
+        }, 700);
+
+    } else {
+        finalText.style.opacity = '1';
+
+        // Restart animation
+        setTimeout(() => {
+            stack.innerHTML = '';
+            finalText.style.opacity = '0';
+            index = 0;
+            animateLetter();
+        }, 3500);
+    }
+}
+
+animateLetter();
+
+
+runAnimation();
+        // API Endpoint mapping
+        const apiEndpoints = {
+            'hi': 'https://transliteration.devnagri.com/api/tl/hi/',
+            'ta': 'https://transliteration.devnagri.com/api/tl/ta/',
+            'te': 'https://transliteration.devnagri.com/api/tl/te/',
+            'kn': 'https://transliteration.devnagri.com/api/tl/kn/',
+            'ml': 'https://transliteration.devnagri.com/api/tl/ml/',
+            'mr': 'https://transliteration.devnagri.com/api/tl/mr/',
+            'gu': 'https://transliteration.devnagri.com/api/tl/gu/',
+            'pa': 'https://transliteration.devnagri.com/api/tl/pa/',
+            'bn': 'https://transliteration.devnagri.com/api/tl/bn/',
+            'as': 'https://transliteration.devnagri.com/api/tl/as/',
+            'or': 'https://transliteration.devnagri.com/api/tl/or/',
+            'ur': 'https://transliteration.devnagri.com/api/tl/ur/'
+        };
+
+        // Language data
+        const languages = [
+            { code: 'hi', name: 'Hindi', script: 'हिन्दी', icon: 'हि', speakers: '600M+', accuracy: '99.7%', description: 'Official Language of India' },
+            { code: 'ta', name: 'Tamil', script: 'தமிழ்', icon: 'த', speakers: '80M+', accuracy: '99.5%', description: 'Classical Language' },
+            { code: 'te', name: 'Telugu', script: 'తెలుగు', icon: 'తె', speakers: '95M+', accuracy: '99.3%', description: 'Technical Specialization' },
+            { code: 'kn', name: 'Kannada', script: 'ಕನ್ನಡ', icon: 'ಕ', speakers: '50M+', accuracy: '99.4%', description: 'IT Hub Language' },
+            { code: 'ml', name: 'Malayalam', script: 'മലയാളം', icon: 'മ', speakers: '35M+', accuracy: '99.2%', description: 'High Literacy' },
+            { code: 'mr', name: 'Marathi', script: 'मराठी', icon: 'म', speakers: '85M+', accuracy: '99.6%', description: 'Western India' },
+            { code: 'gu', name: 'Gujarati', script: 'ગુજરાતી', icon: 'ગ', speakers: '55M+', accuracy: '99.5%', description: 'Business Hub' },
+            { code: 'pa', name: 'Punjabi', script: 'ਪੰਜਾਬੀ', icon: 'ਪ', speakers: '125M+', accuracy: '99.3%', description: 'Gurmukhi Script' },
+            { code: 'bn', name: 'Bengali', script: 'বাংলা', icon: 'ব', speakers: '230M+', accuracy: '99.4%', description: 'Cultural Rich' },
+            { code: 'or', name: 'Odia', script: 'ଓଡ଼ିଆ', icon: 'ଓ', speakers: '35M+', accuracy: '99.2%', description: 'Eastern India' },
+            { code: 'as', name: 'Assamese', script: 'অসমীয়া', icon: 'অ', speakers: '15M+', accuracy: '99.1%', description: 'Northeast' },
+            { code: 'ur', name: 'Urdu', script: 'اردو', icon: 'ا', speakers: '65M+', accuracy: '99.0%', description: 'Persian Script' }
+        ];
+
+        // Language name mapping for display
+        const languageNames = {
+            'hi': 'Hindi (हिन्दी)',
+            'ta': 'Tamil (தமிழ்)',
+            'te': 'Telugu (తెలుగు)',
+            'kn': 'Kannada (ಕನ್ನಡ)',
+            'ml': 'Malayalam (മലയാളം)',
+            'mr': 'Marathi (मराठी)',
+            'gu': 'Gujarati (ગુજરાતી)',
+            'pa': 'Punjabi (ਪੰਜਾਬੀ)',
+            'bn': 'Bengali (বাংলা)',
+            'as': 'Assamese (অসমীয়া)',
+            'or': 'Odia (ଓଡ଼ିଆ)',
+            'ur': 'Urdu (اردو)',
+            'en': 'English'
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize mobile menu
+            initMobileMenu();
+            
+            // Initialize transliteration tool
+            initTransliterationTool();
+
+            // Initialize language grid
+            initLanguageGrid();
+
+            // Initialize SEO tabs
+            initSEOTabs();
+
+            // Initialize other functionalities
+            initOtherFeatures();
+
+            // Auto-transliterate on page load
+            setTimeout(() => {
+                document.getElementById('transliterate-btn').click();
+            }, 1000);
+        });
+
+        function initMobileMenu() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            const overlay = document.getElementById('overlay');
+            const body = document.body;
+
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                overlay.classList.toggle('active');
+                body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                
+                // Change icon
+                const icon = this.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            overlay.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                overlay.classList.remove('active');
+                body.style.overflow = '';
+                
+                // Reset icon
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+
+            // Close menu when clicking on links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    overlay.classList.remove('active');
+                    body.style.overflow = '';
+                    
+                    // Reset icon
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+
+            // Handle dropdowns on mobile
+            document.querySelectorAll('.nav-links li').forEach(item => {
+                if (window.innerWidth <= 992) {
+                    const link = item.querySelector('a');
+                    if (link && item.querySelector('.dropdown')) {
+                        link.addEventListener('click', function(e) {
+                            if (!item.classList.contains('active')) {
+                                e.preventDefault();
+                                item.classList.add('active');
+                            }
+                        });
+                    }
+                }
+            });
+        }
+
+        function initTransliterationTool() {
+            const transliterateBtn = document.getElementById('transliterate-btn');
+            const sourceText = document.getElementById('source-text');
+            const targetLanguage = document.getElementById('target-language');
+            const sourceLanguage = document.getElementById('source-language');
+            const resultText = document.getElementById('transliteration-result');
+            const resultMeta = document.getElementById('result-meta');
+            const wordBreakdown = document.getElementById('word-breakdown');
+            const wordList = document.getElementById('word-list');
+            const termTags = document.querySelectorAll('.term-tag');
+            const clearInputBtn = document.getElementById('clear-input');
+            const copyResultBtn = document.getElementById('copy-result');
+            const swapBtn = document.getElementById('swap-languages');
+            const targetLanguageName = document.getElementById('target-language-name');
+            const charCount = document.getElementById('char-count');
+
+            // Update character count
+            function updateCharCount() {
+                const text = sourceText.value;
+                charCount.textContent = text.length;
+            }
+
+            // Update target language display
+            function updateLanguageDisplay() {
+                const lang = targetLanguage.value;
+                targetLanguageName.textContent = languageNames[lang];
+            }
+
+            // Split text into words and preserve spaces
+            function splitTextWithSpaces(text) {
+                const parts = [];
+                let currentPart = '';
+
+                for (let i = 0; i < text.length; i++) {
+                    if (text[i] === ' ') {
+                        if (currentPart) {
+                            parts.push({ type: 'word', text: currentPart });
+                            currentPart = '';
+                        }
+                        let spaceCount = 1;
+                        while (i + 1 < text.length && text[i + 1] === ' ') {
+                            spaceCount++;
+                            i++;
+                        }
+                        parts.push({ type: 'space', text: ' '.repeat(spaceCount) });
+                    } else {
+                        currentPart += text[i];
+                    }
+                }
+
+                if (currentPart) {
+                    parts.push({ type: 'word', text: currentPart });
+                }
+
+                return parts;
+            }
+
+            // Transliterate a single word
+            async function transliterateWord(word, lang) {
+                try {
+                    const encodedWord = encodeURIComponent(word);
+                    const apiUrl = `${apiEndpoints[lang]}${encodedWord}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API responded with status: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+
+                    if (data.success && data.result && data.result.length > 0) {
+                        return data.result[0];
+                    }
+                } catch (error) {
+                    console.error('Error transliterating word:', word, error);
+                }
+
+                return null;
+            }
+
+            // Handle transliteration button click
+            transliterateBtn.addEventListener('click', async function () {
+                const text = sourceText.value.trim();
+                const lang = targetLanguage.value;
+
+                if (!text) {
+                    resultText.innerHTML = '<p style="color: var(--gray); font-style: italic; text-align: center; padding: 40px;">Please enter some text to transliterate.</p>';
+                    resultMeta.innerHTML = '';
+                    wordBreakdown.style.display = 'none';
+                    return;
+                }
+
+                // Show loading state
+                const originalBtnText = transliterateBtn.innerHTML;
+                transliterateBtn.innerHTML = '<div class="loading"></div> Transliterating...';
+                transliterateBtn.disabled = true;
+
+                // Clear previous results
+                resultText.innerHTML = '<div style="text-align: center; padding: 40px;"><div class="loading" style="margin: 0 auto;"></div><p style="margin-top: 15px; color: var(--gray);">Processing transliteration...</p></div>';
+                resultMeta.innerHTML = '';
+                wordBreakdown.style.display = 'none';
+                wordList.innerHTML = '';
+
+                try {
+                    // Split text into words and spaces
+                    const parts = splitTextWithSpaces(text);
+                    const transliteratedParts = [];
+                    const wordTransliterations = [];
+
+                    // Transliterate each word separately
+                    for (let i = 0; i < parts.length; i++) {
+                        const part = parts[i];
+
+                        if (part.type === 'space') {
+                            // Keep spaces as they are
+                            transliteratedParts.push(part.text);
+                        } else if (part.type === 'word') {
+                            // Show progress for long texts
+                            if (parts.length > 5 && i % Math.ceil(parts.length / 4) === 0) {
+                                resultText.innerHTML = `<div style="text-align: center; padding: 40px;">
+                                    <div class="loading" style="margin: 0 auto;"></div>
+                                    <p style="margin-top: 15px; color: var(--gray);">
+                                        Transliterating word ${i + 1} of ${parts.filter(p => p.type === 'word').length}...
+                                    </p>
+                                </div>`;
+                            }
+
+                            // Transliterate the word
+                            const transliteratedWord = await transliterateWord(part.text, lang);
+
+                            if (transliteratedWord) {
+                                transliteratedParts.push(transliteratedWord);
+
+                                // Store for word-by-word breakdown
+                                wordTransliterations.push({
+                                    original: part.text,
+                                    transliterated: transliteratedWord
+                                });
+                            } else {
+                                // If translation fails, keep the original word
+                                transliteratedParts.push(part.text);
+
+                                wordTransliterations.push({
+                                    original: part.text,
+                                    transliterated: part.text
+                                });
+                            }
+                        }
+                    }
+
+                    // Combine all parts
+                    const finalTransliteration = transliteratedParts.join('');
+
+                    // Get current time for display
+                    const currentTime = new Date().toLocaleTimeString('en-US', {
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+
+                    // Display the final transliteration
+                    resultText.innerHTML = `<div style="font-size: 1.3rem; line-height: 1.8; font-family: 'Source Sans Pro', sans-serif;">${finalTransliteration}</div>`;
+
+                    // Show word-by-word breakdown if we have multiple words
+                    if (wordTransliterations.length > 1) {
+                        wordBreakdown.style.display = 'block';
+                        wordTransliterations.forEach(item => {
+                            const wordItem = document.createElement('div');
+                            wordItem.className = 'word-item';
+                            wordItem.innerHTML = `
+                                <span class="original-word">${item.original}</span>
+                                <span class="transliterated-word">${item.transliterated}</span>
+                            `;
+                            wordList.appendChild(wordItem);
+                        });
+                    }
+
+                    // Show meta info
+                    const wordCount = wordTransliterations.length;
+                    resultMeta.innerHTML = `
+                        <div>
+                            <span><i class="fas fa-check-circle" style="color: var(--success);"></i> Transliterated to ${languageNames[lang].split(' ')[0]}</span>
+                            <span>${wordCount} word${wordCount !== 1 ? 's' : ''} • ${currentTime}</span>
+                        </div>
+                    `;
+
+                } catch (error) {
+                    console.error('Transliteration error:', error);
+
+                    // Show error message
+                    resultText.innerHTML = '<div style="text-align: center; padding: 40px; color: #dc3545;"><i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 15px;"></i><p>Unable to connect to transliteration service. Please try again later or use the sample transliteration below.</p></div>';
+                    resultMeta.innerHTML = `<span style="color: #dc3545;"><i class="fas fa-exclamation-circle"></i> Connection Error • ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>`;
+
+                    // Show fallback transliteration
+                    showFallbackTransliteration(lang, text);
+                } finally {
+                    // Reset button state
+                    transliterateBtn.innerHTML = originalBtnText;
+                    transliterateBtn.disabled = false;
+                }
+            });
+
+            // Function to show fallback transliteration if API fails
+            function showFallbackTransliteration(lang, text) {
+                // Sample fallback transliterations for common technical terms
+                const fallbackMap = {
+                    'hi': {
+                        'geotechnical': 'भूतकनीकी',
+                        'investigation': 'जाँच',
+                        'report': 'रिपोर्ट',
+                        'soil': 'मृदा',
+                        'analysis': 'विश्लेषण',
+                        'foundation': 'नींव',
+                        'design': 'डिजाइन',
+                        'engineering': 'इंजीनियरिंग',
+                        'structural': 'संरचनात्मक',
+                        'concrete': 'कंक्रीट',
+                        'compressive': 'संपीड़न',
+                        'strength': 'शक्ति',
+                        'bearing': 'बेयरिंग',
+                        'capacity': 'क्षमता'
+                    },
+                    'ta': {
+                        'geotechnical': 'புவித் தொழில்நுட்ப',
+                        'investigation': 'விசாரணை',
+                        'report': 'அறிக்கை',
+                        'soil': 'மண்',
+                        'analysis': 'பகுப்பாய்வு',
+                        'foundation': 'அடித்தளம்',
+                        'design': 'வடிவமைப்பு',
+                        'engineering': 'பொறியியல்',
+                        'structural': 'கட்டமைப்பு',
+                        'concrete': 'கான்கிரீட்',
+                        'compressive': 'அமுக்க',
+                        'strength': 'வலிமை',
+                        'bearing': 'தாங்கும்',
+                        'capacity': 'திறன்'
+                    },
+                    'te': {
+                        'geotechnical': 'భూతాంతరిక్',
+                        'investigation': 'విచారణ',
+                        'report': 'నివేదిక',
+                        'soil': 'నేల',
+                        'analysis': 'విశ్లేషణ',
+                        'foundation': 'పునాది',
+                        'design': 'డిజైన్',
+                        'engineering': 'ఇంజనీరింగ్',
+                        'structural': 'నిర్మాణాత్మక',
+                        'concrete': 'కాంక్రీటు',
+                        'compressive': 'కుదింపు',
+                        'strength': 'బలం',
+                        'bearing': 'బేరింగ్',
+                        'capacity': 'సామర్థ్యం'
+                    },
+                    'kn': {
+                        'geotechnical': 'ಭೂತಾಂತರಿಕ್',
+                        'investigation': 'ವಿಚಾರಣೆ',
+                        'report': 'ವರದಿ',
+                        'soil': 'ಮಣ್ಣು',
+                        'analysis': 'ವಿಶ್ಲೇಷಣೆ',
+                        'foundation': 'ಅಡಿಪಾಯ',
+                        'design': 'ವಿನ್ಯಾಸ',
+                        'engineering': 'ಎಂಜಿನಿಯರಿಂಗ್',
+                        'structural': 'ರಚನಾತ್ಮಕ',
+                        'concrete': 'ಕಾಂಕ್ರೀಟ್',
+                        'compressive': 'ಸಂಕೋಚನ',
+                        'strength': 'ಶಕ್ತಿ',
+                        'bearing': 'ಬೇರಿಂಗ್',
+                        'capacity': 'ಸಾಮರ್ಥ್ಯ'
+                    }
+                };
+
+                // Split text into words
+                const words = text.toLowerCase().split(/\s+/);
+                const transliteratedWords = [];
+                const wordTransliterations = [];
+
+                // Try to transliterate each word
+                words.forEach(word => {
+                    if (fallbackMap[lang] && fallbackMap[lang][word]) {
+                        transliteratedWords.push(fallbackMap[lang][word]);
+                        wordTransliterations.push({
+                            original: word,
+                            transliterated: fallbackMap[lang][word]
+                        });
+                    } else {
+                        // Keep the word as is if no transliteration available
+                        transliteratedWords.push(word);
+                        wordTransliterations.push({
+                            original: word,
+                            transliterated: word
+                        });
+                    }
+                });
+
+                // Show the result
+                const finalResult = transliteratedWords.join(' ');
+                resultText.innerHTML = `<div style="font-size: 1.3rem; line-height: 1.8; font-family: 'Source Sans Pro', sans-serif;">${finalResult}</div>`;
+
+                // Show word-by-word breakdown
+                if (wordTransliterations.length > 0) {
+                    wordBreakdown.style.display = 'block';
+                    wordTransliterations.forEach(item => {
+                        const wordItem = document.createElement('div');
+                        wordItem.className = 'word-item';
+                        wordItem.innerHTML = `
+                            <span class="original-word">${item.original}</span>
+                            <span class="transliterated-word">${item.transliterated}</span>
+                        `;
+                        wordList.appendChild(wordItem);
+                    });
+                }
+
+                resultMeta.innerHTML = '<span style="color: var(--warning);"><i class="fas fa-info-circle"></i> Sample transliteration (demo mode) • Connection issues detected</span>';
+            }
+
+            // Handle sample term clicks
+            termTags.forEach(tag => {
+                tag.addEventListener('click', function () {
+                    const text = this.getAttribute('data-text');
+                    sourceText.value = text;
+                    updateCharCount();
+
+                    // Auto-transliterate after a short delay
+                    setTimeout(() => {
+                        transliterateBtn.click();
+                    }, 300);
+                });
+            });
+
+            // Clear input button
+            clearInputBtn.addEventListener('click', function () {
+                sourceText.value = '';
+                updateCharCount();
+                resultText.innerHTML = '<p style="color: var(--gray); font-style: italic; text-align: center; padding: 40px;">Transliterated text will appear here.</p>';
+                resultMeta.innerHTML = '';
+                wordBreakdown.style.display = 'none';
+            });
+
+            // Copy result button
+            copyResultBtn.addEventListener('click', function () {
+                const result = resultText.innerText.trim();
+                if (result && !result.includes('Transliterated text will appear here')) {
+                    navigator.clipboard.writeText(result).then(() => {
+                        // Show feedback
+                        const originalIcon = copyResultBtn.innerHTML;
+                        copyResultBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                        copyResultBtn.style.color = 'var(--success)';
+                        setTimeout(() => {
+                            copyResultBtn.innerHTML = originalIcon;
+                            copyResultBtn.style.color = '';
+                        }, 2000);
+                    });
+                }
+            });
+
+            // Swap languages button
+            swapBtn.addEventListener('click', function () {
+                // For now, just rotate the icon
+                this.style.transform = 'rotate(180deg)';
+                setTimeout(() => {
+                    this.style.transform = 'rotate(0deg)';
+                }, 300);
+            });
+
+            // Update language display when selection changes
+            targetLanguage.addEventListener('change', function () {
+                updateLanguageDisplay();
+                // Auto-transliterate when language changes
+                transliterateBtn.click();
+            });
+
+            // Update character count as user types
+            sourceText.addEventListener('input', updateCharCount);
+
+            // Allow Enter key to trigger transliteration (with Ctrl/CMD)
+            sourceText.addEventListener('keydown', function (e) {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                    e.preventDefault();
+                    transliterateBtn.click();
+                }
+            });
+
+            // Initialize
+            updateCharCount();
+            updateLanguageDisplay();
+        }
+
+        function initLanguageGrid() {
+            const languageGrid = document.querySelector('.language-grid');
+
+            languages.forEach(lang => {
+                const languageCard = document.createElement('div');
+                languageCard.className = 'language-card';
+                languageCard.setAttribute('data-language', lang.code);
+                languageCard.setAttribute('data-name', lang.name);
+
+                languageCard.innerHTML = `
+                    <div class="language-icon">${lang.icon}</div>
+                    <div class="language-name">${lang.name}</div>
+                    <div class="language-script">${lang.script}</div>
+                    <div class="language-stats">
+                        <span><i class="fas fa-users"></i> ${lang.speakers}</span>
+                        <span><i class="fas fa-check-circle"></i> ${lang.accuracy}</span>
+                    </div>
+                `;
+
+                languageCard.addEventListener('click', function () {
+                    // Update transliteration tool language
+                    const targetLanguageSelect = document.getElementById('target-language');
+                    targetLanguageSelect.value = lang.code;
+
+                    // Update language display
+                    const targetLanguageName = document.getElementById('target-language-name');
+                    targetLanguageName.textContent = languageNames[lang.code];
+
+                    // Update SEO tab
+                    const seoTab = document.querySelector(`.seo-tab[data-tab="english-${lang.name.toLowerCase()}"]`);
+                    if (seoTab) {
+                        seoTab.click();
+                    } else {
+                        document.querySelector('.seo-tab[data-tab="all-languages"]').click();
+                    }
+
+                    // Update active language card
+                    document.querySelectorAll('.language-card').forEach(card => {
+                        card.classList.remove('active');
+                    });
+                    this.classList.add('active');
+
+                    // Auto-transliterate
+                    document.getElementById('transliterate-btn').click();
+                });
+
+                languageGrid.appendChild(languageCard);
+            });
+
+            // Set first language as active
+            const firstCard = languageGrid.querySelector('.language-card');
+            if (firstCard) {
+                firstCard.classList.add('active');
+            }
+        }
+
+        function initSEOTabs() {
+            const seoTabs = document.querySelectorAll('.seo-tab');
+            const seoContentBox = document.getElementById('seo-content-box');
+
+            const seoContent = {
+                'english-hindi': {
+                    title: 'English to Hindi Transliteration Services',
+                    content: `
+                        <h3>English to Hindi (हिन्दी) Transliteration Services</h3>
+                        <p>Atlas Geotech provides the most accurate English to Hindi transliteration for technical documents. Our specialized system understands technical terminology in fields like engineering, geology, and science, ensuring precise conversion while maintaining document structure and formatting.</p>
+                        
+                        <p>With over 600 million speakers, Hindi is India's most widely spoken language, making accurate transliteration crucial for government projects, corporate documentation, and technical communications across northern and central India.</p>
+                        
+                        <h4>Key Features for Hindi Transliteration:</h4>
+                        <p>• <strong>99.7% Accuracy:</strong> Specially trained on engineering and technical documents</p>
+                        <p>• <strong>Atlas Script Support:</strong> Complete Unicode-compliant Atlas output</p>
+                        <p>• <strong>Technical Terminology:</strong> Specialized dictionaries for engineering, medical, legal, and scientific terms</p>
+                        <p>• <strong>Real-time Processing:</strong> Instant transliteration with API support for integration</p>
+                        <p>• <strong>Format Preservation:</strong> Maintains document structure, tables, and formatting</p>
+                        
+                        <div class="info-box" style="margin-top: 30px;">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>Pro Tip:</strong> Use our Hindi transliteration for government tenders, engineering reports, technical manuals, and educational materials requiring accurate Atlas script representation.</p>
+                        </div>
+                    `
+                },
+                'english-tamil': {
+                    title: 'English to Tamil (தமிழ்) Transliteration Services',
+                    content: `
+                        <h3>English to Tamil (தமிழ்) Transliteration Services</h3>
+                        <p>Specialized transliteration for Tamil technical documents with support for classical terminology and modern technical terms. Our Tamil language experts ensure cultural and contextual accuracy for documents ranging from engineering specifications to medical research papers.</p>
+                        
+                        <p>Tamil, being one of the world's oldest living languages, requires special attention to script accuracy and technical terminology. Our system is specifically trained on Tamil technical documents from various industries across Tamil Nadu and global Tamil diaspora.</p>
+                        
+                        <h4>Specialized Tamil Support:</h4>
+                        <p>• <strong>Engineering Documentation:</strong> Civil, mechanical, and electrical engineering terms</p>
+                        <p>• <strong>Medical & Pharmaceutical:</strong> Accurate transliteration of medical terminology</p>
+                        <p>• <strong>Government Documents:</strong> Support for Tamil Nadu government projects and PWD documents</p>
+                        <p>• <strong>Educational Materials:</strong> Textbooks, research papers, and academic publications</p>
+                        <p>• <strong>Technical Specifications:</strong> Product manuals, specifications, and quality documents</p>
+                        
+                        <div class="info-box" style="margin-top: 30px;">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>Pro Tip:</strong> Ideal for automotive industry documentation in Chennai, IT documentation in Tamil Nadu, and educational materials for Tamil-medium technical education.</p>
+                        </div>
+                    `
+                },
+                'english-kannada': {
+                    title: 'English to Kannada (ಕನ್ನಡ) Transliteration Services',
+                    content: `
+                        <h3>English to Kannada (ಕನ್ನಡ) Transliteration Services</h3>
+                        <p>IT and engineering focused transliteration services for Kannada. Special support for software documentation, technical manuals, and engineering drawings commonly used in Karnataka's tech industry and manufacturing sector.</p>
+                        
+                        <p>With Bengaluru being India's Silicon Valley, our Kannada transliteration service is optimized for IT documentation, software requirements, technical specifications, and engineering drawings used across industries in Karnataka and surrounding regions.</p>
+                        
+                        <h4>Kannada Industry Focus:</h4>
+                        <p>• <strong>IT & Software:</strong> Code documentation, API references, technical specifications</p>
+                        <p>• <strong>Engineering & Manufacturing:</strong> Technical drawings, specifications, quality manuals</p>
+                        <p>• <strong>Government Projects:</strong> Karnataka government documents, PWD, irrigation projects</p>
+                        <p>• <strong>Educational Institutions:</strong> VTU, engineering colleges, research papers</p>
+                        <p>• <strong>Technical Training:</strong> Training materials, workshops, certification programs</p>
+                        
+                        <div class="info-box" style="margin-top: 30px;">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>Pro Tip:</strong> Perfect for IT companies in Bengaluru, engineering firms in Karnataka, and educational institutions offering technical courses in Kannada medium.</p>
+                        </div>
+                    `
+                },
+                'all-languages': {
+                    title: 'Complete Indian Languages Coverage - 22+ Languages',
+                    content: `
+                        <h3>22+ Indian Languages Supported</h3>
+                        <p>Comprehensive transliteration coverage for all major Indian languages including Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi, Bengali, Odia, Assamese, Urdu, and more. Each language has specialized technical terminology databases and domain-specific training.</p>
+                        
+                        <p>Our platform supports document transliteration across all 22 scheduled languages of India, plus additional regional languages and dialects. Each language module is developed with native language experts and technical domain specialists.</p>
+                        
+                        <div class="language-list" style="margin: 40px 0;">
+                            ${languages.map(lang => `
+                                <div class="language-list-item" data-language="${lang.code}">
+                                    <i class="fas fa-check-circle" style="color: var(--secondary);"></i>
+                                    <div>
+                                        <strong>${lang.name} (${lang.script})</strong>
+                                        <div>${lang.description} • ${lang.speakers} Speakers • ${lang.accuracy} Accuracy</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <h4>Complete Language Coverage:</h4>
+                        <p>• <strong>All 22 Scheduled Languages:</strong> Complete coverage as per Indian Constitution</p>
+                        <p>• <strong>Regional Dialects:</strong> Support for major regional variations and dialects</p>
+                        <p>• <strong>Technical Terminology:</strong> Industry-specific dictionaries for each language</p>
+                        <p>• <strong>Government Compliance:</strong> Meets all government documentation standards</p>
+                        <p>• <strong>Enterprise Integration:</strong> API support for all major languages</p>
+                        
+                        <div class="info-box" style="margin-top: 30px;">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>Pro Tip:</strong> For multi-lingual projects, our platform allows simultaneous transliteration into multiple Indian languages, maintaining consistency across all language versions.</p>
+                        </div>
+                    `
+                }
+            };
+
+            seoTabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    // Remove active class from all tabs
+                    seoTabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+
+                    // Update content based on tab
+                    const tabId = this.getAttribute('data-tab');
+
+                    if (seoContent[tabId]) {
+                        seoContentBox.innerHTML = seoContent[tabId].content;
+
+                        // Add click handlers to language list items
+                        seoContentBox.querySelectorAll('.language-list-item').forEach(item => {
+                            item.addEventListener('click', function () {
+                                const langCode = this.getAttribute('data-language');
+                                const targetLanguageSelect = document.getElementById('target-language');
+                                targetLanguageSelect.value = langCode;
+
+                                // Update language display
+                                const targetLanguageName = document.getElementById('target-language-name');
+                                targetLanguageName.textContent = languageNames[langCode];
+
+                                // Update active language card
+                                document.querySelectorAll('.language-card').forEach(card => {
+                                    card.classList.remove('active');
+                                    if (card.getAttribute('data-language') === langCode) {
+                                        card.classList.add('active');
+                                    }
+                                });
+
+                                // Auto-transliterate
+                                document.getElementById('transliterate-btn').click();
+                            });
+                        });
+                    }
+                });
+            });
+
+            // Initialize with first tab active
+            seoTabs[0].click();
+        }
+
+        function initOtherFeatures() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('href') === '#') return;
+
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // CTA Button Functionality
+            document.querySelectorAll('.cta-button').forEach(button => {
+                if (button.textContent.includes('Free Trial')) {
+                    button.addEventListener('click', function () {
+                        alert('Starting your 30-day free trial! Please check your email for activation link. You will have access to all 22 languages and 100 document translations.');
+                    });
+                } else if (button.textContent.includes('Demo')) {
+                    button.addEventListener('click', function () {
+                        alert('Thank you for your interest! Our sales team will contact you within 24 hours to schedule a customized demo based on your requirements.');
+                    });
+                }
+            });
+
+            // Demo booking buttons
+            document.querySelectorAll('.secondary-button').forEach(button => {
+                if (button.textContent.includes('Demo')) {
+                    button.addEventListener('click', function () {
+                        alert('Please provide your contact details and preferred time for demo. Our team will confirm the schedule.');
+                    });
+                }
+            });
+
+            // Add structured data for SEO
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.text = JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                "name": "Atlas Geotech Transliteration",
+                "description": "India's #1 technical transliteration platform supporting 22+ Indian languages for engineering and scientific documents",
+                "url": "https://www.atlasgeotech.com",
+                "logo": "https://www.atlasgeotech.com/atlasgeotech_logo1.svg",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Bangalore",
+                    "addressRegion": "Karnataka",
+                    "addressCountry": "India"
+                },
+                "serviceType": "Technical Document Transliteration",
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "India"
+                }
+            });
+            document.head.appendChild(script);
+        }
+    </script>
+</body>
+
+</html>
