@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlas Languages Transliteration | #1 Indian Languages English to Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi, Bengali, Odia, Assamese, Urdu transliteration</title>
+    <title>Atlas Geotech Languages Transliteration | #1 Indian Languages transliteration</title>
     <meta name="description"
         content="India's #1 technical transliteration platform supporting 22+ Indian languages. Accurate English to Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi, Bengali, Odia, Assamese, Urdu transliteration for technical documents.">
     <meta name="keywords"
@@ -1764,7 +1764,157 @@
             .feature-icon i {
                 font-size: 1.8rem;
             }
-        }
+        }/* Bottom Control Panel */
+.bottom-control-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    padding: 25px;
+    background: var(--light);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--gray-light);
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.bottom-control-panel .swap-btn {
+    background: var(--white);
+    border: 2px solid var(--gray-light);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--dark);
+    transition: var(--transition);
+    font-size: 1.3rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.bottom-control-panel .swap-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+    transform: rotate(180deg) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 86, 166, 0.2);
+}
+
+.bottom-control-panel .cta-button {
+    padding: 16px 45px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 86, 166, 0.2);
+}
+
+.bottom-control-panel .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 86, 166, 0.3);
+}
+
+.language-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: var(--white);
+    border-radius: 30px;
+    border: 1px solid var(--gray-light);
+    font-size: 0.95rem;
+    color: var(--gray);
+}
+
+.language-info i {
+    color: var(--primary);
+}
+
+.language-info strong {
+    color: var(--dark);
+}
+
+/* Update panel headers for better alignment */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    background: var(--light);
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.panel-header .language-selector {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.panel-header .result-actions {
+    margin-left: auto;
+}
+
+/* Adjust transliteration panels for better spacing */
+.transliteration-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* Responsive styles for bottom control panel */
+@media (max-width: 992px) {
+    .bottom-control-panel {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .bottom-control-panel .swap-btn {
+        order: 2;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .bottom-control-panel .cta-button {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+        padding: 15px 30px;
+    }
+    
+    .language-info {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .transliteration-panels {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .bottom-control-panel {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .bottom-control-panel .cta-button {
+        font-size: 1.1rem;
+        padding: 14px 25px;
+    }
+    
+    .language-info {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
     </style>
 </head>
 
@@ -1875,48 +2025,50 @@
 
 
     <!-- Real-Time Transliteration Tool Section -->
-    <section class="transliteration-section" id="transliteration-tool">
-        <div class="container">
-            <div class="section-title">
-                <h2>Real-Time Technical Transliteration Tool</h2>
-                <p>Experience our technology firsthand. Input technical terms or sentences in English and see them
-                    accurately transliterated into various regional scripts, preserving technical meaning and spacing.
-                </p>
-            </div>
+    <!-- Update the transliteration-tool section in your HTML -->
 
-            <div class="transliteration-tool">
-                <!-- Dual Panel Layout -->
-                <div class="transliteration-panels">
-                    <!-- Left Panel: Input -->
-                    <div class="panel input-panel">
-                        <div class="panel-header">
-                            <div class="language-selector">
-                                <label for="source-language"><i class="fas fa-language"></i> Input Language</label>
-                                <select id="source-language">
-                                    <option value="en">English</option>
-                                </select>
-                            </div>
-                            <button class="clear-btn" id="clear-input" title="Clear text">
-                                <i class="fas fa-times"></i> Clear
-                            </button>
+<section class="transliteration-section" id="transliteration-tool">
+    <div class="container">
+        <div class="section-title">
+            <h2>Real-Time Technical Transliteration Tool</h2>
+            <p>Experience our technology firsthand. Input technical terms or sentences in English and see them
+                accurately transliterated into various regional scripts, preserving technical meaning and spacing.
+            </p>
+        </div>
+
+        <div class="transliteration-tool">
+            <!-- Dual Panel Layout -->
+            <div class="transliteration-panels">
+                <!-- Left Panel: Input -->
+                <div class="panel input-panel">
+                    <div class="panel-header">
+                        <div class="language-selector">
+                            <label for="source-language"><i class="fas fa-language"></i> Input Language</label>
+                            <select id="source-language">
+                                <option value="en">English</option>
+                            </select>
                         </div>
-                        <div class="panel-content">
-                            <textarea id="source-text"
-                                placeholder="Enter technical terms or sentences here...">Atlas-Transliterate</textarea>
-                            <div class="text-counter">
-                                <span id="char-count">86</span> characters
-                            </div>
+                        <button class="clear-btn" id="clear-input" title="Clear text">
+                            <i class="fas fa-times"></i> Clear
+                        </button>
+                    </div>
+                    <div class="panel-content">
+                        <textarea id="source-text"
+                            placeholder="Enter technical terms or sentences here...">Atlas Transliterate</textarea>
+                        <div class="text-counter">
+                            <span id="char-count">86</span> characters
                         </div>
                     </div>
+                </div>
 
-                    <!-- Middle: Control Panel -->
-                    <div class="control-panel">
-                        <button id="swap-languages" class="swap-btn" title="Swap languages">
-                            <i class="fas fa-exchange-alt"></i>
-                        </button>
-                        <button id="transliterate-btn" class="cta-button">
-                            <i class="fas fa-play"></i> Transliterate
-                        </button>
+                <!-- Middle: Control Panel - Moved to bottom -->
+                <div class="control-panel" style="display: none;">
+                    <!-- This will be moved to bottom -->
+                </div>
+
+                <!-- Right Panel: Output -->
+                <div class="panel output-panel">
+                    <div class="panel-header">
                         <div class="language-selector">
                             <label for="target-language"><i class="fas fa-language"></i> Target Script</label>
                             <select id="target-language">
@@ -1934,63 +2086,68 @@
                                 <option value="ur">Urdu (اردو)</option>
                             </select>
                         </div>
-                    </div>
-
-                    <!-- Right Panel: Output -->
-                    <div class="panel output-panel">
-                        <div class="panel-header">
-                            <div class="language-display">
-                                <i class="fas fa-language"></i>
-                                <span id="target-language-name">Hindi (हिन्दी)</span>
-                            </div>
-                            <div class="result-actions">
-                                <button class="copy-btn" id="copy-result" title="Copy to clipboard">
-                                    <i class="far fa-copy"></i> Copy
-                                </button>
-                            </div>
-                        </div>
-                        <div class="panel-content">
-                            <div id="transliteration-result" class="result-text">
-                                <!-- Result will appear here -->
-                            </div>
-                            <div id="word-breakdown" class="word-breakdown" style="display: none;">
-                                <div class="breakdown-title"><i class="fas fa-list"></i> Word-by-word transliteration:
-                                </div>
-                                <div id="word-list"></div>
-                            </div>
-                            <div class="result-meta" id="result-meta">
-                                <!-- Status info will appear here -->
-                            </div>
+                        <div class="result-actions">
+                            <button class="copy-btn" id="copy-result" title="Copy to clipboard">
+                                <i class="far fa-copy"></i> Copy
+                            </button>
                         </div>
                     </div>
-                </div>
-
-                <!-- Sample Terms -->
-                <div class="sample-terms">
-                    <h5><i class="fas fa-lightbulb"></i> Try these technical terms:</h5>
-                    <div class="term-tags">
-                        <span class="term-tag" data-text="Geotechnical investigation">Geotechnical investigation</span>
-                        <span class="term-tag" data-text="Soil analysis report">Soil analysis report</span>
-                        <span class="term-tag" data-text="Foundation engineering">Foundation engineering</span>
-                        <span class="term-tag" data-text="Structural design specification">Structural design
-                            specification</span>
-                        <span class="term-tag" data-text="Concrete compressive strength">Concrete compressive
-                            strength</span>
-                        <span class="term-tag" data-text="Bearing capacity analysis">Bearing capacity analysis</span>
+                    <div class="panel-content">
+                        <div id="transliteration-result" class="result-text">
+                            <!-- Result will appear here -->
+                        </div>
+                        <div id="word-breakdown" class="word-breakdown" style="display: none;">
+                            <div class="breakdown-title"><i class="fas fa-list"></i> Word-by-word transliteration:
+                            </div>
+                            <div id="word-list"></div>
+                        </div>
+                        <div class="result-meta" id="result-meta">
+                            <!-- Status info will appear here -->
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="tool-info">
-                <div class="info-box">
+            <!-- Bottom Control Panel (like Google Translate) -->
+            <div class="bottom-control-panel">
+                <button id="swap-languages" class="swap-btn" title="Swap languages">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+                <button id="transliterate-btn" class="cta-button">
+                    <i class="fas fa-play"></i> Transliterate
+                </button>
+                <div class="language-info">
                     <i class="fas fa-info-circle"></i>
-                    <p>This tool preserves original spacing and transliterates each word separately for accurate
-                        technical terminology representation. Our AI-powered system ensures 99.5%+ accuracy for
-                        technical terms.</p>
+                    <span>Translating from <strong>English</strong> to <strong id="current-target-language">Hindi</strong></span>
+                </div>
+            </div>
+
+            <!-- Sample Terms -->
+            <div class="sample-terms">
+                <h5><i class="fas fa-lightbulb"></i> Try these technical terms:</h5>
+                <div class="term-tags">
+                    <span class="term-tag" data-text="Geotechnical investigation">Geotechnical investigation</span>
+                    <span class="term-tag" data-text="Soil analysis report">Soil analysis report</span>
+                    <span class="term-tag" data-text="Foundation engineering">Foundation engineering</span>
+                    <span class="term-tag" data-text="Structural design specification">Structural design
+                        specification</span>
+                    <span class="term-tag" data-text="Concrete compressive strength">Concrete compressive
+                        strength</span>
+                    <span class="term-tag" data-text="Bearing capacity analysis">Bearing capacity analysis</span>
                 </div>
             </div>
         </div>
-    </section>
+
+        <div class="tool-info">
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <p>This tool preserves original spacing and transliterates each word separately for accurate
+                    technical terminology representation. Our AI-powered system ensures 99.5%+ accuracy for
+                    technical terms.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Language Grid Section -->
     <section class="language-grid-section" id="languages">
